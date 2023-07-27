@@ -30,7 +30,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # use dmenu as a program launcher
-bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#666666' -nb '#1a1a1a' -sb '#1a1a1a' -sf '#00aaff' -fn 'Roboto-10'"
+bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#666666' -nb '#1a1a1a' -sb '#1a1a1a' -sf '#0099ff' -fn 'Roboto-10'"
 
 # start polybar for statusbar
 exec --no-startup-id polybar
@@ -63,17 +63,17 @@ bindsym $mod+Shift+Right move right
 
 # set window style
 for_window [all] border pixel 1
-for_window [class=".*"] title_format "<span foreground='#00aaff'>*</span> %title"
+for_window [class=".*"] title_format "<span foreground='#0099ff'>*</span> %title"
 hide_edge_borders both
 
 client.background       #1a1a1a
 	
 # class                 border  bground text    indicator child_border
-client.focused          #1a1a1a #1a1a1a #00aaff #00aaff   #00aaff
-client.focused_inactive #1a1a1a #1a1a1a #ffffff #00aaff   #00aaff
-client.unfocused        #1a1a1a #1a1a1a #666666 #666666   #00aaff
-client.urgent           #1a1a1a #1a1a1a #FFFFFF #00aaff   #00aaff
-client.placeholder      #1a1a1a #1a1a1a #FFFFFF #00aaff   #00aaff
+client.focused          #1a1a1a #1a1a1a #0099ff #0099ff   #0099ff
+client.focused_inactive #1a1a1a #1a1a1a #ffffff #0099ff   #0099ff
+client.unfocused        #1a1a1a #1a1a1a #666666 #666666   #0099ff
+client.urgent           #1a1a1a #1a1a1a #FFFFFF #0099ff   #0099ff
+client.placeholder      #1a1a1a #1a1a1a #FFFFFF #0099ff   #0099ff
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
