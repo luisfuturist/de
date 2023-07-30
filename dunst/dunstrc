@@ -1,0 +1,129 @@
+[global]
+    ### Card ###
+
+    width = 300
+    height = 400
+    origin = top-right
+    offset = 15x49
+    scale = 0
+    corner_radius = 1
+    background = "#1a1a1a"
+    transparency = 0
+
+    # Padding between text and separator.
+    padding = 8
+    text_icon_padding = 0
+
+    frame_width = 1
+    frame_color = "#1a1a1a"
+
+    # Display notification on focused monitor.
+    follow = mouse
+
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_current
+    mouse_right_click = context
+
+	# Display indicators for URLs (U) and actions (A).
+    show_indicators = true
+
+    force_xwayland = false
+    force_xinerama = false
+
+	# Always run rule-defined scripts, even if the notification is suppressed
+    always_run_script = true
+
+	ignore_dbusclose = false
+
+    # dmenu path.
+    dmenu = /usr/bin/dmenu -nf '#666' -nb '#1a1a1a' -sb '#1a1a1a' -sf '#0099ff' -fn "Roboto-10" -p dunst:
+    # Browser for opening urls in context menu.
+    browser = /usr/bin/xdg-open
+
+    ### Card.Text ###
+
+    font = Roboto 11
+    line_height = 3
+    markup = yes
+    format = "<span foreground='#666' size='small'>%a</span>\n<b>%s</b>\n<span foreground='#cccccc'>%b</span>"
+    alignment = left
+    vertical_alignment = top
+    show_age_threshold = -1
+    ellipsize = end
+    word_wrap = yes
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = no
+
+    ### Card.Icon ###
+
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 32
+
+    # Paths to default icons.
+    icon_path = /usr/share/icons/Paper/16x16/mimetypes/:/usr/share/icons/Paper/48x48/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/48x48/notifications/:/usr/share/icons/Paper/48x48/emblems/:/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/32x32/status/:/usr/icons/font-awesome/
+
+    ### Card.ProgressBar ###
+
+    progress_bar = true
+    progress_bar_height = 6
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    highlight = "#005c99"
+
+    ### CardContainer ###
+
+    separator_color = "#333333"
+    separator_height = 1
+
+    # Sort messages by urgency.
+    sort = no
+    idle_threshold = 0
+
+    # Maximum number of notification (0 means no limit)
+    notification_limit = 0
+	# Show how many messages are currently hidden (because of notification_limit).
+    indicate_hidden = yes
+
+    ### History ###
+
+    # Should a notification popped up from history be sticky or timeout as if it would normally do.
+    sticky_history = yes
+    # Maximum amount of notifications kept in history
+    history_length = 15
+
+	### Window ###
+
+    # Define the title of the windows spawned by dunst
+    title = Dunst
+    class = Dunst
+
+### Urgency ###
+
+[urgency_low]
+    frame_color = "#1a1a1a"
+    foreground = "#b2b2b2"
+    timeout = 4
+    height = 0
+    format = "<span foreground='#999999' size='small'>%a</span>\n<b>%s</b>\n<span foreground='#999999'>%b</span>"
+    #default_icon = /path/to/icon
+
+[urgency_normal]
+    frame_color = "#0099ff"
+    foreground = "#ffffff"
+    timeout = 5
+
+[urgency_critical]
+    frame_color = "#ff0033"
+    foreground = "#ff0033"
+    format = "<span foreground='#666' size='small'>%a</span>\n<b>%s</b>\n<span foreground='#cc0029'>%b</span>"
+    timeout = 6
+    
+### Scripting
+
+[highlight-discord-system-messages]
+    summary = "*system*"
+    appname = "discord"
+    foreground = "#ff6600"
