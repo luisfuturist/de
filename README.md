@@ -28,3 +28,5 @@ Appearence
 - Custom notification appearence powered by [dunst](https://github.com/dunst-project/dunst);
 - Custom application launcher appearence powered by [dmenu](https://wiki.archlinux.org/title/Dmenu);
 - Custom `xfce4-terminal` appearence;
+- Custom GTK theme based on Oomox theme style;
+- Custom icon theme based on Android Lollipop's material design icons.
