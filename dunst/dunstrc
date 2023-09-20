@@ -106,7 +106,6 @@
     frame_color = "#1a1a1a"
     foreground = "#b2b2b2"
     timeout = 4
-    height = 0
     format = "<span foreground='#999999' size='small'>%a</span>\n<b>%s</b>\n<span foreground='#999999'>%b</span>"
     #default_icon = /path/to/icon
 
