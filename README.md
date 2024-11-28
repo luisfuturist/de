@@ -17,10 +17,9 @@ Key bindings powered by [i3wm](https://i3wm.org/):
 - Bindings for restarting and reloading i3;
 - Bindings for workspace management.
 
-Statusbar powered by [polybar](https://github.com/polybar/polybar):
+Statusbar powered by [i3status](https://github.com/i3/i3status):
 - Hardware info: disk, RAM, CPU and battery usage;
-- Volume management;
-- Network name;
+- Network;
 - Date time;
 
 Appearence
