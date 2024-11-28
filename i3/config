@@ -51,7 +51,7 @@ bar {
 }
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # interactive screenshot
 bindsym Print exec gnome-screenshot -i
