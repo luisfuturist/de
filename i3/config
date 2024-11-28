@@ -51,7 +51,7 @@ bar {
 }
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec alacritty
 
 # interactive screenshot
 bindsym Print exec gnome-screenshot -i
