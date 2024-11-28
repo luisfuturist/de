@@ -32,8 +32,20 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # use dmenu as a program launcher
 bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#666666' -nb '#1a1a1a' -sb '#1a1a1a' -sf '#0099ff' -fn 'Roboto-10'"
 
-# start polybar for statusbar
-exec --no-startup-id polybar
+bar {
+    colors {
+        background #1a1a1a
+        statusline #666666
+        separator #333333
+
+        focused_workspace  #1a1a1a #1a1a1a #0099ff
+        active_workspace   #1a1a1a #1a1a1a #0099ff
+        inactive_workspace #1a1a1a #1a1a1a #666666
+        urgent_workspace   #1a1a1a #1a1a1a #ff9933
+    }
+
+    status_command i3status  # Keep your existing status command
+}
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -159,4 +171,3 @@ mode "notifications" {
 
 bindsym $mod+r mode "resize" ; exec $indicate-mode "Resize mode enabled."
 bindsym $mod+n mode "notifications" ; exec $indicate-mode "Notifications mode enabled."
-
