@@ -4,6 +4,7 @@ alias ga="git add"                    # Stage changes
 alias gaa="git add --all"             # Stage all changes
 alias gc="git commit -m"              # Commit with a message
 alias gcm="git commit --amend"        # Amend the last commit
+alias gcn="git commit --amend --no-edit" # Amend the last commit with --no-edit
 alias gp="git push"                   # Push to remote
 alias gpl="git pull"                  # Pull from remote
 alias gco="git checkout"              # Checkout a branch or commit
