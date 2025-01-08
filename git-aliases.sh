@@ -2,16 +2,20 @@
 alias gs="git status"                  # Show the working tree status
 alias ga="git add"                    # Stage changes
 alias gaa="git add --all"             # Stage all changes
-alias gc="git commit -m"              # Commit with a message
-alias gcm="git commit --amend"        # Amend the last commit
-alias gcn="git commit --amend --no-edit" # Amend the last commit with --no-edit
 alias gp="git push"                   # Push to remote
 alias gpl="git pull"                  # Pull from remote
 alias gco="git checkout"              # Checkout a branch or commit
 alias gcb="git checkout -b"           # Create and switch to a new branch
 alias gd="git diff"                   # Show changes
 alias gds="git diff --staged"         # Show staged changes
-alias gl="git log --oneline"          # Compact log view
+alias gl="git log"                    # Log
+alias gl1="git log --oneline"          # Compact log view
+
+# Commit Commands
+
+alias gc="git commit -m"                        # Commit with a message
+alias gcm="git commit --amend"                  # Amend the last commit
+alias gcn="git commit --amend --no-edit"        # Amend the last commit with no-edit
 
 # Branch Management
 alias gb="git branch"                 # List branches
