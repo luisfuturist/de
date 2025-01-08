@@ -1,4 +1,16 @@
-# workstation-config
+# 💻 Desktop Environment
+
+This repository contains my personal workstation files for my Linux system, showcasing various customizations across different components such as the window manager, terminal, notification daemon, status bar, and desktop environment. These customizations are designed to enhance my overall user experience and workflow.
+
+## Scope
+
+* **Window Manager:** Custom keybindings, layouts, and appearance.
+* **Terminal:** Custom colors and fonts.
+* **Notification Daemon:** Custom appearance and behavior.
+* **Status Bar:** System information display and custom formatting.
+* **Desktop Environment:** 
+  * Oomox GTK+ Theme
+  * Icon Themes: Archdroid, Numix, and Papirus
 
 ## Features
 
@@ -29,3 +41,31 @@ Appearence
 - Custom `xfce4-terminal` appearence;
 - Custom GTK theme based on Oomox theme style;
 - Custom icon theme based on Android Lollipop's material design icons.
+
+## Getting Started
+
+### Prerequisites
+
+- Manjaro
+- Git
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/luisfuturist/de.git
+   cd de
+   ```
+
+2. Install:
+    // TODO
+
+### Development
+
+// TODO
+
+## Note
+
+- This configuration is specific to my own preferences and may require adjustments to work optimally on your system.
+- Some of the scripts and configurations may require root privileges to install or modify system settings.
