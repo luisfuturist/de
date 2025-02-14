@@ -1,3 +1,26 @@
 #!/bin/bash
 
-cd ~/Downloads/Discord/ && ./Discord
+# Set download URL and destination
+DISCORD_URL="https://discord.com/api/download?platform=linux&format=tar.gz"
+DOWNLOAD_DIR="$HOME/Downloads"
+DISCORD_ARCHIVE="$DOWNLOAD_DIR/discord.tar.gz"
+DISCORD_FOLDER="$DOWNLOAD_DIR/Discord"
+
+# First-time installation check or update
+if [[ ! -d "$DISCORD_FOLDER" || "$1" == "-U" || "$1" == "--update" ]]; then
+    echo "Downloading Discord..."
+    wget -O "$DISCORD_ARCHIVE" "$DISCORD_URL"
+
+    echo "Extracting Discord..."
+    mkdir -p "$DISCORD_FOLDER"
+    tar -xzf "$DISCORD_ARCHIVE" -C "$DISCORD_FOLDER" --strip-components=1
+
+    # Remove the archive file
+    rm "$DISCORD_ARCHIVE"
+
+    echo "Discord installed/updated successfully!"
+fi
+
+# Run Discord
+echo "Starting Discord..."
+"$DISCORD_FOLDER/Discord"
