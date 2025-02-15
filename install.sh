@@ -19,6 +19,10 @@ chmod +x /usr/local/bin/*
 # reload bashrc
 source ~/.bashrc
 
+# hardware config
+
+sudo pacman -S xorg-xbacklight --noconfirm
+
 # misc
 
 yay -S google-chrome --noconfirm
@@ -36,6 +40,10 @@ sudo pacman -S alacritty --noconfirm
 sed -i 's/show_hidden=0/show_hidden=1/' ~/.config/pcmanfm/default/pcmanfm.conf
 
 # tools
+
+## monitoring
+
+sudo pacman -S htop glances --noconfirm
 
 ## dev
 
