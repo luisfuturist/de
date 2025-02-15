@@ -19,6 +19,11 @@ chmod +x /usr/local/bin/*
 # reload bashrc
 source ~/.bashrc
 
+# misc
+
+yay -S google-chrome --noconfirm
+sudo pamac install transmission-gtk --noconfirm
+
 # alacritty
 
 sudo pacman -S alacritty --noconfirm
@@ -58,6 +63,10 @@ sudo pacman -S jdk21-openjdk jdk17-openjdk --noconfirm
 sudo pamac install docker docker-compose --noconfirm
 
 yay -S visual-studio-code-bin --noconfirm
+
+## network
+
+sudo pacman -S net-tools nmap --noconfirm
 
 ## media
 
