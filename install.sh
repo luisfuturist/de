@@ -1,8 +1,9 @@
 # setup
 
+setxkbmap -layout br -variant abnt2
+
 sudo pacman-mirrors -c Brazil
 
-setxkbmap -layout br -variant abnt2
 sudo timedatectl set-timezone America/Sao_Paulo
 
 yay -S google-chrome --noconfirm
@@ -25,21 +26,23 @@ sudo pacman -S alacritty --noconfirm
 # i3
 # TODO: install i3
 
+# file explorer
+
+sed -i 's/show_hidden=0/show_hidden=1/' ~/.config/pcmanfm/default/pcmanfm.conf
+
 # tools
 
 ## dev
 
 ### git
 
-# git config
 su - luis -c '  
 git config --global user.name "Luis Emidio" &&  
 git config --global user.email "luisfuturist@gmail.com" &&  
 git config --global core.editor "code --wait"  
 '
 
-# install git command aliases
-# TODO: install git aliases file and source it in .bashrc
+bash scripts/install-git-aliases.sh
 
 ### tooling
 
@@ -68,6 +71,7 @@ xdg-mime default org.gnome.Evince.desktop application/pdf
 
 # theme
 
-sudo pamac install ttf-roboto ttf-roboto-mono noto-fonts noto-fonts-emoji --no-confirm
+sudo pamac install ttf-roboto ttf-roboto-mono noto-fonts-emoji --no-confirm
+sudo pacman -S noto-fonts --noconfirm
 
 ## TODO: install oomox theme
