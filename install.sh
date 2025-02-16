@@ -21,7 +21,7 @@ source ~/.bashrc
 
 # hardware config
 
-sudo pacman -S xorg-xbacklight --noconfirm
+sudo pacman -S brightnessctl --noconfirm
 
 # misc
 
@@ -44,6 +44,10 @@ sed -i 's/show_hidden=0/show_hidden=1/' ~/.config/pcmanfm/default/pcmanfm.conf
 ## monitoring
 
 sudo pacman -S htop glances --noconfirm
+
+## screenshot
+
+sudo pacman -S flameshot --noconfirm
 
 ## dev
 
@@ -87,6 +91,8 @@ sudo pacman -S evince --noconfirm
 xdg-mime default org.gnome.Evince.desktop application/pdf
 
 # theme
+
+sudo pacman -S feh --noconfirm
 
 sudo pamac install ttf-roboto ttf-roboto-mono noto-fonts-emoji --no-confirm
 sudo pacman -S noto-fonts --noconfirm

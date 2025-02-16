@@ -1,4 +1,4 @@
-echo "Installing git aliases..."
+echo "Applying git aliases..."
 
 # Copy the script to a proper location
 sudo cp git-aliases.sh /usr/local/bin/git-aliases.sh
@@ -12,4 +12,4 @@ fi
 # Reload bashrc to apply changes
 source ~/.bashrc
 
-echo "Git aliases installed successfully!"
+echo "Git aliases applied successfully!"
