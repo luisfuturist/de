@@ -1,16 +1,16 @@
 [colors.primary]
 background = "#000000"
-foreground = "#999999"
+foreground = "#b3b3b3"
 
 [colors.normal]
 black = "#000000"
-blue = "#00ff33"
-cyan = "#00ffcc"
-green = "#0099ff"
-magenta = "#ff00cc"
-red = "#ff0033"
+blue = "#b3b3ff"
+cyan = "#b3ffff"
+green = "#b3ffb3"
+magenta = "#ffb3ff"
+red = "#ffb3b3"
 white = "#ffffff"
-yellow = "#ffff00"
+yellow = "#ffffb3"
 
 [colors.bright]
 black = "#4d4d4d"
@@ -24,15 +24,15 @@ white = "#b2b2b2"
 
 [colors.selection]
 text = "#000000"
-background = "#0099ff"
+background = "#b3b3b3"
 
 [cursor]
 style = { shape = "Underline", blinking = "Always" }
 blink_interval = 500
 
 [colors.cursor]
-text = "#666666"
-cursor = "#0099ff"
+text = "#000000"
+cursor = "#b3b3b3"
 
 [font]
 normal = { family = "Roboto Mono", style = "Regular" }

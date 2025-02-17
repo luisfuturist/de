@@ -39,7 +39,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id "dmenu_recency -nf '#666666' -nb '#000000' -sb '#000000' -sf '#0099ff' -fn 'Roboto-10'"
+bindsym $mod+d exec --no-startup-id "dmenu_recency -nf '#666666' -nb '#000000' -sb '#000000' -sf '#b3b3ff' -fn 'Roboto-10'"
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -281,7 +281,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
@@ -339,8 +339,8 @@ bar {
         separator  #333333
 
         #                      border  backgr. text
-        focused_workspace  #000000 #000000 #0099ff
-        active_workspace   #000000 #000000 #0099ff
+        focused_workspace  #000000 #000000  #b3b3ff
+        active_workspace   #000000 #000000  #b3b3ff
         inactive_workspace #000000 #000000 #666666
         binding_mode       #000000 #000000 #666666
         urgent_workspace   #000000 #000000 #ff9933
@@ -352,12 +352,11 @@ bindsym $mod+m bar mode toggle
 
 # set window style
 for_window [all] border pixel 1
-for_window [class=".*"] title_format "<span foreground='#ffffff'>*</span> %title"
 hide_edge_borders both
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #000000 #000000 #b3b3b3 #808080
+  client.focused          #000000 #000000  #b3b3ff #808080
   client.focused_inactive #000000 #000000 #808080 #808080
   client.unfocused        #000000 #000000 #808080 #808080
   client.urgent           #000000 #000000 #808080 #808080

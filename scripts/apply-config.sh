@@ -9,8 +9,8 @@ cp -r ./config/i3/config ~/.config/i3
 echo "i3 config applied successfully!"
 
 echo "Applying theme..."
-cp ./images/SkinEmerging_08-30-2014_01.jpg /usr/share/backgrounds
-feh --bg-center /usr/share/backgrounds/SkinEmerging_08-30-2014_01.jpg
+sudo cp ./images/SkinEmerging_08-30-2014_01-1.jpg /usr/share/backgrounds
+feh --bg-center /usr/share/backgrounds/SkinEmerging_08-30-2014_01-1.jpg
 echo "Theme applied successfully!"
 
 bash ./scripts/install-git-aliases.sh
