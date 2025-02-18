@@ -78,7 +78,8 @@ yay -S visual-studio-code-bin --noconfirm
 
 ## network
 
-sudo pacman -S net-tools nmap --noconfirm
+sudo pacman -S net-tools bind-tools nmap --noconfirm
+curl -fsSL https://tailscale.com/install.sh | sh
 
 ## media
 
