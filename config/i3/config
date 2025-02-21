@@ -284,9 +284,6 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
-# Set wallpaper
-exec --no-startup-id feh --bg-center /usr/share/backgrounds/SkinEmerging_08-30-2014_01.jpg
-
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources

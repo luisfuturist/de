@@ -86,8 +86,6 @@ xdg-mime default org.gnome.Evince.desktop application/pdf
 
 # theme
 
-sudo pacman -S feh --noconfirm
-
 sudo pamac install ttf-roboto ttf-roboto-mono noto-fonts-emoji --no-confirm
 sudo pacman -S noto-fonts --noconfirm
 

@@ -13,9 +13,14 @@ mkdir -p ~/.config/i3status
 cp -r ./config/i3status/i3status.conf ~/.config/i3status/i3status.conf
 echo "i3 config applied successfully!"
 
+echo "Applying nitrogen config..."
+mkdir -p ~/.config/nitrogen
+cp -r ./config/nitrogen/bg-saved.cfg ~/.config/nitrogen/bg-saved.cfg
+echo "nitrogen config applied successfully!"
+
 echo "Applying theme..."
 sudo cp ./images/SkinEmerging_08-30-2014_01-1.jpg /usr/share/backgrounds
-feh --bg-center /usr/share/backgrounds/SkinEmerging_08-30-2014_01-1.jpg
+nitrogen --restore
 echo "Theme applied successfully!"
 
 bash ./scripts/install-git-aliases.sh

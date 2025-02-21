@@ -9,6 +9,7 @@ This repository contains my personal workstation files for my Linux system, show
 * **Notification Daemon:** Custom appearance and behavior.
 * **Status Bar:** System information display and custom formatting.
 * **Desktop Environment:** 
+  * Custom wallpaper
   * Oomox GTK+ Theme
   * Icon Themes: Archdroid, Numix, and Papirus
 
@@ -35,6 +36,7 @@ Statusbar powered by [i3status](https://github.com/i3/i3status):
 
 Appearence
 - Font: Roboto;
+- Custom wallpaper;
 - Custom [i3wm](https://i3wm.org/) appearence;
 - Custom notification appearence powered by [dunst](https://github.com/dunst-project/dunst);
 - Custom application launcher appearence powered by [dmenu](https://wiki.archlinux.org/title/Dmenu);
