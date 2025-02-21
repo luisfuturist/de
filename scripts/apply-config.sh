@@ -8,6 +8,11 @@ mkdir -p ~/.config/i3
 cp -r ./config/i3/config ~/.config/i3
 echo "i3 config applied successfully!"
 
+echo "Applying i3status config..."
+mkdir -p ~/.config/i3status
+cp -r ./config/i3status/i3status.conf ~/.config/i3status/i3status.conf
+echo "i3 config applied successfully!"
+
 echo "Applying theme..."
 sudo cp ./images/SkinEmerging_08-30-2014_01-1.jpg /usr/share/backgrounds
 feh --bg-center /usr/share/backgrounds/SkinEmerging_08-30-2014_01-1.jpg

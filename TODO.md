@@ -4,9 +4,7 @@
   - Add docs
 - Create a script to facilitate development with live-reload
   - Add docs
-- Fix Dmenu command line
-- Fix volume applet
-- Add battery low notifications
+- Improve battery low notifications
 - Use notifications for confirmation: Origin from: power menu, i3 actions, etc
 - Customize desktop lockscreen
 - Customize desktop application launcher

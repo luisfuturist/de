@@ -321,7 +321,7 @@ set_from_resource $term_color15    color15
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
-	status_command i3status
+	status_command i3status -c ~/.config/i3status/i3status.conf
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
@@ -335,8 +335,8 @@ bar {
 
     colors {
         background #000000
-        statusline #ff0000
-        separator  #333333
+        statusline #b3b3ff
+        separator  #000000
 
         #                      border  backgr. text
         focused_workspace  #000000 #000000  #b3b3ff

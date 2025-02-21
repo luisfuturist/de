@@ -1,0 +1,60 @@
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# start XDG autostart .desktop files using dex
+exec --no-startup-id dex-autostart --autostart --environment i3
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the screen before suspend. Use loginctl lock-session to lock your screen
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# use pactl to adjust volume in PulseAudio
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# use dmenu as a program launcher
+bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#666666' -nb '#000000' -sb '#000000' -sf '#0099ff' -fn 'Roboto-10'"
+
+
+# interactive screenshot
+bindsym Print exec gnome-screenshot -i
+# crop-area screenshot
+bindsym $mod+Print exec gnome-screenshot -a
+
+
+
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus container
+bindsym $mod+a focus parent
+#bindsym $mod+d focus child
+
+### Modes ###
+
+set $indicate-mode dunstify -r 987 -a "i3 Mode Indicator" -u low -t 4000
+
+mode "resize" {
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Escape mode "default" ; exec $indicate-mode 'Default mode enabled.'
+}
+
+mode "notifications" {
+        bindsym BackSpace exec "dunstctl close"
+        bindsym Ctrl+BackSpace exec "dunstctl close-all"
+        bindsym Up exec "dunstctl history-pop"
+        bindsym Down exec "dunstctl close"
+        bindsym Return exec "dunstctl action"
+
+        bindsym Escape mode "default" ; exec $indicate-mode 'Default mode enabled.'
+}
+
+bindsym $mod+r mode "resize" ; exec $indicate-mode "Resize mode enabled."
+bindsym $mod+n mode "notifications" ; exec $indicate-mode "Notifications mode enabled."
