@@ -26,9 +26,6 @@ bindsym $mod+n border normal
 # is used in the bar {} block below.
 font pango:Roboto 9
 
-# Set wallpaper
-exec --no-startup-id feh --bg-center /usr/share/backgrounds/SkinEmerging_08-30-2014_01.jpg
-
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
@@ -286,6 +283,9 @@ exec --no-startup-id clipit
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+
+# Set wallpaper
+exec --no-startup-id feh --bg-center /usr/share/backgrounds/SkinEmerging_08-30-2014_01.jpg
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
