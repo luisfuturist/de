@@ -5,26 +5,26 @@ foreground = "#b3b3b3"
 [colors.normal]
 black = "#000000"
 blue = "#b3b3ff"
-cyan = "#b3ffff"
+cyan = "#b3eeff"
 green = "#b3ffb3"
 magenta = "#ffb3ff"
 red = "#ff0000"
 white = "#ffffff"
-yellow = "#ffffb3"
+yellow = "#eeffb3"
 
 [colors.bright]
-black = "#4d4d4d"
-blue = "#33adff"
-cyan = "#33ffd6"
-green = "#33ffff"
-magenta = "#ff33d6"
-red = "#ff335c"
-yellow = "#ffff33"
-white = "#b2b2b2"
+black = "#000000"
+blue = "#b3b3ff"
+cyan = "#b3eeff"
+green = "#b3ffb3"
+magenta = "#ffb3ff"
+red = "#ff0000"
+white = "#ffffff"
+yellow = "#eeffb3"
 
 [colors.selection]
-text = "#000000"
-background = "#b3b3b3"
+text = "#b3b3ff"
+background = "#666666"
 
 [cursor]
 style = { shape = "Underline", blinking = "Always" }
