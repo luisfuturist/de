@@ -8,10 +8,12 @@ This repository contains my personal workstation files for my Linux system, show
 * **Terminal:** Custom colors and fonts.
 * **Notification Daemon:** Custom appearance and behavior.
 * **Status Bar:** System information display and custom formatting.
+* **Lock Screen** 
 * **Desktop Environment:** 
   * Custom wallpaper
   * Oomox GTK+ Theme
   * Icon Themes: Archdroid, Numix, and Papirus
+* **Installation of Essential Programs**
 
 ## Features
 

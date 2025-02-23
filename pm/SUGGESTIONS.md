@@ -1,0 +1,5 @@
+# Suggestions
+
+- Neovim
+- polybar
+- rofi
