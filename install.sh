@@ -54,6 +54,8 @@ git config --global core.editor "code --wait"
 
 bash scripts/install-git-aliases.sh
 
+sudo pacman -S github-cli --noconfirm
+
 ### tooling
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
@@ -90,3 +92,5 @@ sudo pamac install ttf-roboto ttf-roboto-mono noto-fonts-emoji --no-confirm
 sudo pacman -S noto-fonts --noconfirm
 
 ## TODO: install oomox theme
+
+yay -S themix-full-git
