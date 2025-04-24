@@ -18,9 +18,13 @@ mkdir -p ~/.config/nitrogen
 cp -r ./config/nitrogen/bg-saved.cfg ~/.config/nitrogen/bg-saved.cfg
 echo "nitrogen config applied successfully!"
 
-echo "Applying theme..."
+echo "Applying oomox config..."
+cp -r ./config/oomox/. ~/.config/oomox/
+echo "Oomox applied successfully!"
+
+echo "Applying wallpaper..."
 sudo cp ./images/SkinEmerging_08-30-2014_01-1.jpg /usr/share/backgrounds
 nitrogen --restore
-echo "Theme applied successfully!"
+echo "Wallpaper applied successfully!"
 
 bash ./scripts/install-git-aliases.sh

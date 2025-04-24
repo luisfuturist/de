@@ -11,8 +11,8 @@ This repository contains my personal workstation files for my Linux system, show
 * **Lock Screen** 
 * **Desktop Environment:** 
   * Custom wallpaper
-  * Oomox GTK+ Theme
-  * Icon Themes: Archdroid, Numix, and Papirus
+  * Custom Oomox GTK+ Theme
+  * Custom Archdroid icon theme
 * **Installation of Essential Programs**
 
 ## Features
@@ -63,11 +63,35 @@ Appearence
    ```
 
 2. Install:
-    // TODO
+    ```bash
+   bash install.sh
+   ```
 
 ### Development
 
-// TODO
+If you're editing the configuration files in this repo, don’t forget to apply the changes to see the effects:
+
+```bash
+bash scripts/apply-config.sh
+```
+
+To customize the appearance using Themix, install the editor with:
+
+```bash
+bash scripts/install-appearance-editor.sh
+```
+
+To test LightDM, run:
+
+```bash
+bash scripts/test-lightdm.sh
+```
+
+After making changes to the config, remember to extract them back into this repo:
+
+```bash
+bash scripts/extract-config.sh
+```
 
 ## Note
 

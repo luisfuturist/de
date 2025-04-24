@@ -68,6 +68,7 @@ curl -fsSL https://get.pnpm.io/install.sh | sh -
 sudo pacman -S jdk21-openjdk jdk17-openjdk --noconfirm
 
 sudo pamac install docker docker-compose --noconfirm
+bash scripts/install-docker.sh
 
 yay -S visual-studio-code-bin --noconfirm
 
@@ -80,17 +81,16 @@ curl -fsSL https://tailscale.com/install.sh | sh
 
 sudo pacman -S peek inkscape vlc qt6-multimedia-ffmpeg obs-studio kdenlive gimp --noconfirm
 
+## games
+
+bash scripts/install-games.sh
+
 ## docs
 
 sudo pacman -Rns mupdf --noconfirm
 sudo pacman -S evince --noconfirm
 xdg-mime default org.gnome.Evince.desktop application/pdf
 
-# theme
+# appearance
 
-sudo pamac install ttf-roboto ttf-roboto-mono noto-fonts-emoji --no-confirm
-sudo pacman -S noto-fonts --noconfirm
-
-## TODO: install oomox theme
-
-yay -S themix-full-git
+bash scripts/install-appearance.sh

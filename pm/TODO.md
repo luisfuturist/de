@@ -1,7 +1,6 @@
 # TODO
 
-- Create a script for installing apps that I use in desktop
-  - Add docs
+- Imrpove docs
 - Create a script to facilitate development with live-reload
   - Add docs
 - Customize dmenu run mode theme
