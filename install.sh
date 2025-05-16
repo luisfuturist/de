@@ -49,7 +49,7 @@ sudo pacman -S flameshot --noconfirm
 su - luis -c '  
 git config --global user.name "Luis Emidio" &&  
 git config --global user.email "luisfuturist@gmail.com" &&  
-git config --global core.editor "code --wait"  
+git config --global core.editor "cursor --wait"  
 '
 
 bash scripts/install-git-aliases.sh
