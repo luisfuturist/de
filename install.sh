@@ -46,10 +46,11 @@ sudo pacman -S flameshot --noconfirm
 
 ### git
 
-su - luis -c '  
-git config --global user.name "Luis Emidio" &&  
-git config --global user.email "luisfuturist@gmail.com" &&  
-git config --global core.editor "cursor --wait"  
+su - luis -c ' 
+git config --global user.name "Luis Emidio" && 
+git config --global user.email "luisfuturist@gmail.com" && 
+git config --global core.editor "cursor --wait" &&
+git config --global safe.directory "/codeshare"
 '
 
 bash scripts/install-git-aliases.sh
