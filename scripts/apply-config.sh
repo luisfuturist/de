@@ -3,6 +3,11 @@ mkdir -p ~/.config/alacritty
 cp -r ./config/alacritty/alacritty.toml ~/.config/alacritty
 echo "Alacritty config applied successfully!"
 
+echo "Applying cursor config..."
+mkdir -p ~/.config/Cursor/User
+cp -r ./config/Cursor/User/settings.json ~/.config/Cursor/User/settings.json
+echo "Cursor config applied successfully!"
+
 echo "Applying i3 config..."
 mkdir -p ~/.config/i3
 cp -r ./config/i3/config ~/.config/i3

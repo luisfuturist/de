@@ -2,8 +2,8 @@ echo "Installing appearance..."
 
 ## Install dependencies
 echo "Installing dependencies..."
-sudo pamac install ttf-roboto ttf-roboto-mono noto-fonts-emoji --no-confirm
-sudo pacman -S noto-fonts --noconfirm
+sudo pacman -S ttf-roboto ttf-roboto-mono --noconfirm
+sudo pacman -S noto-fonts noto-fonts-emoji --noconfirm
 
 ## Installing themes and icons
 echo "Installing icons..."

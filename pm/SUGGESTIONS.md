@@ -1,5 +1,5 @@
 # Suggestions
 
-- Neovim
+- NeoVim with GitHub Copilot
 - polybar
-- rofi
+- Walker

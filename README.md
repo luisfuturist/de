@@ -1,99 +1,180 @@
-# 💻 Desktop Environment
+# 💻 DE - Desktop Environment
 
-This repository contains my personal workstation files for my Linux system, showcasing various customizations across different components such as the window manager, terminal, notification daemon, status bar, and desktop environment. These customizations are designed to enhance my overall user experience and workflow.
+An opinionated, automated desktop environment installer for Arch Linux that delivers a cohesive developer workstation with curated applications, streamlined workflows, and consistent configurations deployable through effortless automation.
+
+> [!CAUTION]
+> This project is a work in progress and may not be fully functional.
+
+> [!NOTE]
+> This project is meant to be personal and extremely opinionated. It is not meant to be a general purpose desktop environment. If you find this project useful to your own needs, it is recommended to fork it and make it your own adjustments.
+
+## Goals
+
+- 🎯 **Opinionated**: Curated choices, not user-configurable
+- 🎨 **Aesthetic Excellence**: Cohesive and pleasing user experience
+- ⚡ **Developer Productivity**: Streamlined tooling and workflows
+- 🔧 **Consistent Experience**: Uniform across installations
+- 🔄 **Effortless Deployment**: Quick system setup and recovery
+- 🚀 **Automated Setup**: Fully reproducible desktop environment
 
 ## Scope
 
-* **Window Manager:** Custom keybindings, layouts, and appearance.
-* **Terminal:** Custom colors and fonts.
-* **Notification Daemon:** Custom appearance and behavior.
-* **Status Bar:** System information display and custom formatting.
-* **Lock Screen** 
-* **Desktop Environment:** 
-  * Custom wallpaper
-  * Custom Oomox GTK+ Theme
-  * Custom Archdroid icon theme
-* **Installation of Essential Programs**
+This project includes:
+
+- **Curation of the Desktop Environment**:
+  - Assets (fonts, wallpapers, icons, themes)
+  - Complete system configuration: window manager, terminal, lock screen, status bar, notification daemon, application launcher, etc.
+  - Essential development tools and productivity applications
+  - Custom utility scripts and binaries for enhanced workflow
+- **CLI Installation Tool** with comprehensive automation:
+  - `de prepare` - Downloads dependencies, Arch ISO, sets up USB drive, copies ISO to USB drive, and reboots automatically
+  - `de install` - Complete automated desktop environment deployment including all the curated desktop environment mentioned above
+- **Development Environment for This Project**:
+  - Live synchronization between the local repository and the active system for rapid testing
+
+**Out of scope:**
+
+- Multi-distribution support (Arch Linux only)
+- GUI-based configuration tools
+- Windows or macOS compatibility
+- Legacy hardware support
+- Production server configurations
 
 ## Features
 
-General config
+### Components
+
+| Component | Technology |
+|-----------|------------|
+| Window Manager | [Hyprland](https://hyprland.org/) |
+| Terminal | [Alacritty](https://alacritty.org/) |
+| Status Bar | [Waybar](https://github.com/Alexays/Waybar) |
+| Notification Daemon | [Dunst](https://github.com/dunst-project/dunst) |
+| Application Launcher | [bemenu](https://github.com/Cloudef/bemenu) |
+| Code Editor | [Cursor](https://cursor.sh/), [Neovim](https://neovim.io/) |
+| GTK Theme | [Oomox](https://github.com/themix-project/oomox) |
+| Icon Theme | Archdroid (Android Material Design) |
+| Font | Roboto |
+| Wallpaper Manager | [Nitrogen](https://github.com/l3ib/nitrogen) |
+
+### Settings
+
+- **Keyboard Layout:** Brazilian ABNT2 (`br-abnt2`)
+- **Timezone:** São Paulo, Brazil (`America/Sao_Paulo`)
+- **Locale:** English US with UTF-8 encoding (`en_US.UTF-8`)
+- **System Language:** English US (`en_US`)
+- **Package Mirror:** Brazil region
+
+### Customizations
+
 - Set `$mod` as `Mod4`;
-- Keyboard layout to `br-abnt2`;
-
-Key bindings powered by [i3wm](https://i3wm.org/):
-- Resize and notification modes;
-- Layout bindings: fullscreen, split, floating/tiling, tabs, and more;
-- Screenshot using `gnome-screenshot` by pressing `Print`;
-- Start a new terminal by pressing `$mod+Return`;
 - Open application launcher by pressing `$mod+d`;
-- Adjust volume;
-- Bindings for restarting and reloading i3;
-- Bindings for workspace management.
-
-Statusbar powered by [i3status](https://github.com/i3/i3status):
-- Hardware info: disk, RAM, CPU and battery usage;
-- Network;
-- Date time;
-
-Appearence
-- Font: Roboto;
 - Custom wallpaper;
-- Custom [i3wm](https://i3wm.org/) appearence;
+- Custom [Hyprland](https://hyprland.org/) appearence;
 - Custom notification appearence powered by [dunst](https://github.com/dunst-project/dunst);
-- Custom application launcher appearence powered by [dmenu](https://wiki.archlinux.org/title/Dmenu);
-- Custom `alacritty` appearence;
+- Custom application launcher appearence powered by [bemenu](https://github.com/Cloudef/bemenu);
+- Custom [Alacritty](https://alacritty.org/) appearence;
 - Custom GTK theme based on Oomox theme style;
 - Custom icon theme based on Android Lollipop's material design icons.
 
-## Getting Started
+## Documentation
 
 ### Prerequisites
 
-- Manjaro with i3 Window Manager
-- Git
+Before starting the installation, ensure you have:
 
-### Installation
+- A computer with UEFI firmware (legacy BIOS not supported)
+- At least 8GB of RAM and 128GB of free storage
+- A USB drive with at least 2GB capacity (will be formatted)
+- Stable internet connection for downloading packages
+- [Curl](https://curl.se/) installed on your current system
 
-1. Clone the repository:
+### Installation Guide
+
+> [!IMPORTANT]
+> **Read this documentation on a separate device** (phone, tablet, or another computer) as you'll need to reboot during installation and won't have access to this documentation.
+
+> [!CAUTION]
+> This installation will completely replace your current system. **Back up all important data before proceeding.**
+
+#### Phase 1: Prepare Installation Media
+
+1. **Download and prepare the installation:**
 
    ```bash
-   git clone https://github.com/luisfuturist/de.git
-   cd de
+   curl -fsSL https://de.luisfuturist.com | bash prepare
    ```
 
-2. Install:
-    ```bash
-   bash install.sh
+   This script will:
+   - Download Arch Linux ISO
+   - Install Ventoy USB tool
+   - Format your USB drive
+   - Copy the ISO to the USB drive
+   - Reboot the system
+
+2. **Configure BIOS/UEFI settings:**
+   - Before the computer is about to boot, enter BIOS/UEFI setup (usually F2, F12, or Del key)
+   - Ensure that the USB drive is set as the first boot device
+   - Disable Secure Boot if enabled
+   - Save settings and exit
+
+#### Phase 2: Install Base System
+
+1. **Connect to the internet:** e.g. using WiFi or Ethernet cable
+
+2. **Boot from USB and install Arch Linux:**
+
+   After booting from the USB drive, run:
+
+   ```bash
+   archinstall
    ```
 
-### Development
+3. **Configure installation with these specific settings:**
 
-If you're editing the configuration files in this repo, don’t forget to apply the changes to see the effects:
+   Follow the `archinstall` prompts and use these **required** configurations:
 
-```bash
-bash scripts/apply-config.sh
-```
+   - **Profile Type:** `desktop`
+   - **Desktop Environment:** Select `Hyprland` from the window manager options
+   - **Audio:** `pipewire`
+   - **Kernel:** `linux`, `linux-zen`
+   - **Network configuration:** `NetworkManager`
+   - **Graphics driver:** `nvidia (proprietary drivers)`
+   - **Additional packages:** Leave default or add any specific packages you need
 
-To customize the appearance using Themix, install the editor with:
+   > [!TIP]
+   > For all other settings, the defaults are generally appropriate, but ensure you:
+   > - Set a strong root password
+   > - Create a user account with sudo privileges
+   > - Configure your disk partitioning carefully
 
-```bash
-bash scripts/install-appearance-editor.sh
-```
+4. **Complete base installation:**
+   - Wait for the installation to complete (this may take 10-30 minutes)
+   - Remove the USB drive when prompted
+   - Reboot the system
 
-To test LightDM, run:
+#### Phase 3: Install Desktop Environment
 
-```bash
-bash scripts/test-lightdm.sh
-```
+1. **Complete the desktop environment setup:**
 
-After making changes to the config, remember to extract them back into this repo:
+   After rebooting into your new Arch system, log in and run:
 
-```bash
-bash scripts/extract-config.sh
-```
+   ```bash
+   curl -fsSL https://de.luisfuturist.com | bash install
+   ```
 
-## Note
+   This will install and configure:
+   - All desktop environment components (Hyprland, Waybar, etc.)
+   - Development tools (Cursor, Neovim, Git, Docker, etc.)
+   - Essential applications (Chrome, Alacritty, VLC, etc.)
+   - Custom themes and configurations
+   - System utilities and scripts
 
-- This configuration is specific to my own preferences and may require adjustments to work optimally on your system.
-- Some of the scripts and configurations may require root privileges to install or modify system settings.
+2. **Post-installation:**
+   - The script will automatically configure your shell
+   - Restart your system to apply all changes
+   - Your new desktop environment is ready to use!
+
+---
+
+[Contribute](CONTRIBUTING.md) | [Security](SECURITY.md) | [License](LICENSE)

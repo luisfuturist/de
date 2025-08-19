@@ -13,8 +13,11 @@ echo "Adding $USER to the docker group..."
 sudo usermod -aG docker $USER
 
 # Inform the user to log out and log back in
-echo "User $USER added to docker group. Please log out and log back in, or run 'newgrp docker' to apply the changes."
+echo "User $USER added to docker group."
+
+echo "Applying changes..."
+newgrp docker
 
 # Test Docker without sudo (optional)
-echo "Testing Docker without sudo..."
-docker run hello-world
+# echo "Testing Docker without sudo..."
+# docker run hello-world
