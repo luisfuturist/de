@@ -1,0 +1,4 @@
+[[manager.prepend_keymap]]
+on = [ "<C-Enter>" ]
+run = "shell 'alacritty --working-directory \"$YAZI_CWD\"' --orphan"
+desc = "Open $SHELL here"

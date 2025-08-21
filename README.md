@@ -27,7 +27,7 @@ This project includes:
   - Essential development tools and productivity applications
   - Custom utility scripts and binaries for enhanced workflow
 - **CLI Installation Tool** with comprehensive automation:
-  - `de prepare` - Downloads dependencies, Arch ISO, sets up USB drive, copies ISO to USB drive, and reboots automatically
+  - `de setup_usb` - Downloads dependencies, Arch ISO, sets up USB drive, copies ISO to USB drive, and reboots automatically
   - `de install` - Complete automated desktop environment deployment including all the curated desktop environment mentioned above
 - **Development Environment for This Project**:
   - Live synchronization between the local repository and the active system for rapid testing
@@ -48,14 +48,31 @@ This project includes:
 |-----------|------------|
 | Window Manager | [Hyprland](https://hyprland.org/) |
 | Terminal | [Alacritty](https://alacritty.org/) |
-| Status Bar | [Waybar](https://github.com/Alexays/Waybar) |
-| Notification Daemon | [Dunst](https://github.com/dunst-project/dunst) |
+| Multiplexer | [Tmux](https://github.com/tmux/tmux) |
 | Application Launcher | [bemenu](https://github.com/Cloudef/bemenu) |
 | Code Editor | [Cursor](https://cursor.sh/), [Neovim](https://neovim.io/) |
+| Image Viewer | [Imv](https://github.com/eXeC64/imv) |
 | GTK Theme | [Oomox](https://github.com/themix-project/oomox) |
 | Icon Theme | Archdroid (Android Material Design) |
 | Font | Roboto |
-| Wallpaper Manager | [Nitrogen](https://github.com/l3ib/nitrogen) |
+
+#### Must have software
+
+| Software | Technology |
+|-----------|------------|
+| Notification Daemon | [Dunst](https://github.com/dunst-project/dunst) |
+
+#### Utilities
+
+| Software | Technology |
+|-----------|------------|
+| Status Bar | [Waybar](https://github.com/Alexays/Waybar) |
+| Clipboard | [wl-clipboard](https://github.com/bugaevc/wl-clipboard) |
+| Clipboard Manager | [cliphist](https://github.com/sentriz/cliphist) |
+| Wallpaper | [hyprpaper](https://wiki.hypr.land/Hypr-Ecosystem/hyprpaper/) |
+| File Manager | [pcmanfm](https://github.com/lxde/pcmanfm) (GUI), [yazi](https://github.com/sxyazi/yazi) (TUI) |
+| Idle Management | [hypridle](https://github.com/hyprwm/hypridle) |
+| Audio Mixer | [wiremix](https://github.com/tsowell/wiremix) |
 
 ### Settings
 
@@ -102,7 +119,7 @@ Before starting the installation, ensure you have:
 1. **Download and prepare the installation:**
 
    ```bash
-   curl -fsSL https://de.luisfuturist.com | bash prepare
+   curl -fsSL https://de.luisfuturist.com | bash setup_usb
    ```
 
    This script will:
@@ -174,6 +191,19 @@ Before starting the installation, ensure you have:
    - The script will automatically configure your shell
    - Restart your system to apply all changes
    - Your new desktop environment is ready to use!
+
+### How It Works
+
+#### CLI
+
+- `src/scripts/install-de.sh` - Downloads and installs all the software
+- `src/scripts/config-de.sh` - Create or update the configuration files
+
+As the configuration files creation are not dependent on the installation, the `src/scripts/install-de.sh` & `src/scripts/config-de.sh` can be run in parallel for faster execution
+
+### Development
+
+// TODO: add development documentation
 
 ---
 

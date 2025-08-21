@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Pick a color and copy it to the clipboard
+COLOR=$(hyprpicker); echo -n "$COLOR" | wl-copy; dunstify "Color Copied" "$COLOR"

@@ -1,0 +1,7 @@
+[user]
+	name = Luis Emidio
+	email = luisfuturist@gmail.com
+[core]
+	editor = cursor --wait
+[safe]
+	directory = /delphis

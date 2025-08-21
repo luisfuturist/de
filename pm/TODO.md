@@ -1,15 +1,24 @@
 # TODO
 
+- Bundle CLI from src/cli.sh to dist/cli.sh
+
 - Config waybar
+- Fix waybar live reload
+- Config bootloader to remove the timer
+- Config dunst notifications
+- Config opener, play and edit on yazi
+- Config hyprland
+- Config hypridle
+- Config bemenu
+- Config yazi
+- Config ly and add test mode to it
 - Config theme and icons
-- Config wallpaper
+- Config nvidia
+- Config strigi
 
 - Setup archinstall using `minimal` profile
 - Improve docs
-- Create a script to facilitate development with live-reload
-  - Add docs
 - Customize notification theme
-- Customize login screen
 - Improve battery low notifications
 - Use notifications for confirmation: Origin from: power menu, Hyprland actions, etc.
 - Customize option menu in desktop: Use a Bemenu alternative for option menu, for dunst actions.

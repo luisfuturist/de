@@ -27,7 +27,7 @@
 	# Display indicators for URLs (U) and actions (A).
     show_indicators = true
 
-    force_xwayland = false
+    force_xwayland = true
     force_xinerama = false
 
 	# Always run rule-defined scripts, even if the notification is suppressed

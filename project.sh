@@ -1,0 +1,17 @@
+ROOT_DIR="$(pwd)"
+
+SRC_DIR="$ROOT_DIR/src"
+SRC_CONFIG_DIR="$SRC_DIR/config"
+SRC_BIN_DIR="$SRC_DIR/bin"
+SRC_ALIASES_DIR="$SRC_DIR/aliases"
+SRC_BACKGROUNDS_DIR="$SRC_DIR/backgrounds"
+SRC_ICONS_DIR="$SRC_DIR/icons"
+SRC_THEMES_DIR="$SRC_DIR/themes"
+SRC_GITCONFIG_FILE="$SRC_DIR/.gitconfig"
+
+DEST_CONFIG_DIR="$HOME/.config"
+DEST_BIN_DIR="/usr/local/bin"
+DEST_ALIASES_DIR="/usr/local/aliases"
+DEST_BACKGROUNDS_DIR="/usr/share/backgrounds"
+DEST_ICONS_DIR="$HOME/.icons"
+DEST_THEMES_DIR="$HOME/.themes"

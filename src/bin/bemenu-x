@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# *--tb* <_color_>	Title background.
+# *--tf* <_color_>	Title foreground.
+# *--fb* <_color_>	Filter background.
+# *--ff* <_color_>	Filter foreground
+# *--cb* <_color_>	Cursor background.
+# *--cf* <_color_>	Cursor foreground
+# *--nb* <_color_>	Normal background.
+# *--nf* <_color_>	Normal foreground.
+# *--hb* <_color_>	Highlighted background.
+# *--hf* <_color_>	Highlighted foreground.
+# *--fbb* <_color_>	Feedback background.
+# *--fbf* <_color_>	Feedback foreground.
+# *--sb* <_color_>	Selected background.
+# *--sf* <_color_>	Selected foreground.
+# *--ab* <_color_>	Alternating background color.
+# *--af* <_color_>	Alternating foreground color.
+# *--scb* <_color_>	Scrollbar background.
+# *--scf* <_color_>	Scrollbar foreground.
+
+bemenu-run \
+    --tb '#000000' \
+    --tf '#666666' \
+    --fb '#000000' \
+    --ff '#666666' \
+    --cb '#000000' \
+    --cf '#b3b3ff' \
+    --nb '#000000' \
+    --nf '#666666' \
+    --hb '#000000' \
+    --hf '#b3b3ff' \
+    --fbb '#000000' \
+    --fbf '#666666' \
+    --sb '#000000' \
+    --sf '#666666' \
+    --ab '#000000' \
+    --af '#666666' \
+    --scb '#000000' \
+    --scf '#666666' \
+    --hp 3 \
+    -H 20 \
+    --fn 'Roboto 10' \
+    -p 'Run: ' \
+    "$@"

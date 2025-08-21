@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+alacritty -t yazi_tui_win -e bash -c "source ~/.bashrc && yazi; exit"

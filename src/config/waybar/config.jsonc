@@ -1,0 +1,80 @@
+// Waybar configuration file.
+// See https://github.com/Alexays/Waybar for documentation.
+
+{
+    // General settings
+    "layer": "top",
+    "position": "bottom",
+
+    // Module order
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+
+    "modules-right": [
+        "cpu",
+        "network",
+        "disk",
+        "memory",
+        "battery",
+        "clock",
+        "tray"
+    ],
+
+    // Module configurations
+
+    "network": {
+        "interface": "wlan0",
+        "format-wifi": "W {essid} {signalStrength}%",
+        "format-ethernet": "E {ipaddr} ({bandwidthDownBits})",
+        "format-disconnected": "W down",
+        "interval": 5,
+        "on-click": "alacritty -e htop"
+    },
+
+    "disk": {
+        "path": "D ",
+        "format": " {free} ",
+        "interval": 30,
+        "on-click": "alacritty -e htop"
+    },
+
+    "cpu": {
+        "format": "CPU {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15} {usage}%",
+	    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "interval": 1,
+        "on-click": "alacritty -e htop",
+        "states": {
+            "critical": 80,
+            "high": 50,
+            "medium": 5,
+            "low": 0
+        }
+    },
+
+    "memory": {
+        "format": " MEM {used} | {avail} ",
+        "interval": 5,
+        "threshold_degraded": "1G",
+        "format_degraded": " MEM < {avail} ",
+        "on-click": "alacritty -e htop"
+    },
+
+    "battery": {
+        "format": " {status} {capacity}% ",
+        "format-charging": "CHR {capacity}% ",
+        "format-discharging": "E {capacity}% ",
+        "format-full": "E {capacity}% ",
+        "format-unknown": "E ? {capacity}% ",
+        "states": {
+            "warning": 15,
+            "critical": 5
+        }
+    },
+
+    "clock": {
+        "format": "T {:%y.%m.%d %H:%M}",
+        "min-length": 16,
+        "on-click": "google-chrome-stable --app=\"https://calendar.google.com/calendar/u/0/r\""
+    }
+}

@@ -1,0 +1,57 @@
+* {
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+}
+
+window#waybar {
+    background-color: #000000;
+    color: #b3b3ff;
+}
+
+#clock, #battery, #network, #memory, #cpu {
+    padding: 0px 4px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #666;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    color: #b3b3ff;
+}
+
+#cpu.low .icon {
+    color: #666;
+}
+
+#cpu.medium .icon {
+    color: #ffcc00;
+}
+
+#cpu.high .icon {
+    color: #ff9900;
+}
+
+#cpu.critical .icon {
+    color: #ff3300;
+}
+
+
+#battery.warning {
+    color: #ffcc00;
+}
+
+#battery.critical {
+    color: #ff3300;
+}
+
+#battery.charging {
+    color: #b3ffb3;
+}
+
+#battery.full {
+    color: #b3eeff;
+}
