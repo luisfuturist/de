@@ -4,6 +4,8 @@
 
 - Config waybar
 - Fix waybar live reload
+- Config lock
+- Config idle
 - Config bootloader to remove the timer
 - Config dunst notifications
 - Config opener, play and edit on yazi
@@ -11,6 +13,7 @@
 - Config hypridle
 - Config bemenu
 - Config yazi
+- Config cliphist
 - Config ly and add test mode to it
 - Config theme and icons
 - Config nvidia

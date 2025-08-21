@@ -73,6 +73,7 @@ This project includes:
 | File Manager | [pcmanfm](https://github.com/lxde/pcmanfm) (GUI), [yazi](https://github.com/sxyazi/yazi) (TUI) |
 | Idle Management | [hypridle](https://github.com/hyprwm/hypridle) |
 | Audio Mixer | [wiremix](https://github.com/tsowell/wiremix) |
+| Wifi Manager | [impala](https://github.com/pythops/impala) |
 
 ### Settings
 

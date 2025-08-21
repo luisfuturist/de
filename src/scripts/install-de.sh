@@ -256,7 +256,10 @@ install_misc_software() {
     
     sudo pacman -S ffmpeg --noconfirm
 
+    # Managers
     sudo pacman -S wiremix
+    sudo pacman -S impala
+    sudo pacman -S gdu
 
     # Web browser
     log_info "Installing Google Chrome..."

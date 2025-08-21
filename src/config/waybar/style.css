@@ -8,7 +8,20 @@ window#waybar {
     color: #b3b3ff;
 }
 
-#clock, #battery, #network, #memory, #cpu {
+tooltip {
+    background-color: #000000;
+    opacity: 1;
+    border: none;
+    border-radius: 0px;
+}
+
+tooltip * {
+    color: #b3b3ff;
+    padding: 2px;
+    text-shadow: none;
+}
+
+#clock, #battery, #network, #memory, #cpu, #disk {
     padding: 0px 4px;
 }
 
@@ -36,6 +49,10 @@ window#waybar {
 }
 
 #cpu.critical .icon {
+    color: #ff3300;
+}
+
+#network.disconnected {
     color: #ff3300;
 }
 

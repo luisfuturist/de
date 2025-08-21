@@ -8,16 +8,18 @@
 
     // Module order
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "keyboard-state"
     ],
-
+    
     "modules-right": [
         "cpu",
         "network",
         "disk",
         "memory",
         "battery",
-        "clock",
+        "clock#calendar",
+        "clock#time",
         "tray"
     ],
 
@@ -25,24 +27,28 @@
 
     "network": {
         "interface": "wlan0",
-        "format-wifi": "W {essid} {signalStrength}%",
-        "format-ethernet": "E {ipaddr} ({bandwidthDownBits})",
-        "format-disconnected": "W down",
+        "format-wifi": "{icon}   {essid} {signalStrength}%",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-ethernet": "󰈀   {ipaddr} ({bandwidthDownBits})",
+        "format-disconnected": "󰌙   disconnected",
+        "format-disabled": "󱚼   disabled",
+        "tooltip-format": "󰏋  Open network manager",
         "interval": 5,
-        "on-click": "alacritty -e htop"
+        "on-click": "alacritty -e impala"
     },
 
     "disk": {
-        "path": "D ",
-        "format": " {free} ",
+        "path": "/",
+        "format": "   {free}",
         "interval": 30,
-        "on-click": "alacritty -e htop"
+        "on-click": "alacritty -e gdu /"
     },
 
     "cpu": {
-        "format": "CPU {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15} {usage}%",
+        "format": "   {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
 	    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
         "interval": 1,
+        "min-length": 16,
         "on-click": "alacritty -e htop",
         "states": {
             "critical": 80,
@@ -53,28 +59,48 @@
     },
 
     "memory": {
-        "format": " MEM {used} | {avail} ",
-        "interval": 5,
+        "format": "  {used} GiB | {avail} GiB",
         "threshold_degraded": "1G",
         "format_degraded": " MEM < {avail} ",
         "on-click": "alacritty -e htop"
     },
 
     "battery": {
-        "format": " {status} {capacity}% ",
-        "format-charging": "CHR {capacity}% ",
-        "format-discharging": "E {capacity}% ",
-        "format-full": "E {capacity}% ",
-        "format-unknown": "E ? {capacity}% ",
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-discharging": "{icon} {capacity}%",
+	    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "events": {
+            "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+            "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+            "on-charging-100": "notify-send -u normal 'Battery Full!'"
+        },
         "states": {
-            "warning": 15,
-            "critical": 5
+            "warning": 30,
+            "critical": 10
         }
     },
 
-    "clock": {
-        "format": "T {:%y.%m.%d %H:%M}",
-        "min-length": 16,
-        "on-click": "google-chrome-stable --app=\"https://calendar.google.com/calendar/u/0/r\""
+    "keyboard-state": {
+      "numlock": true,
+      "capslock": true,
+      "format": "{name} {icon}",
+      "format-icons": {
+        "locked": "a",
+        "unlocked": "b"
+      }
+    },
+
+    "clock#calendar": {
+        "format": "󰃭  {:%y.%m.%d}",
+        "on-click": "google-chrome-stable --app=\"https://calendar.google.com/calendar/u/0/r\"",
+        "tooltip-format": "󰏋  Open calendar"
+    },
+
+    "clock#time": {
+        "format": "   {:%H:%M}",
+        "on-click": "google-chrome-stable --app=\"https://tasks.luisfuturist.com\"",
+        "tooltip-format": "󰏋  Open tasks"
     }
 }
