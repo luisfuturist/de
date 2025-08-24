@@ -21,6 +21,24 @@ get_latest_version() {
     curl -s https://discord.com/api/updates?platform=linux | jq -r '.name'
 }
 
+open_or_focus_discord() {
+    cd "$DISCORD_FOLDER"
+
+    # Wayland hints if applicable
+    if [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
+        export OZONE_PLATFORM=wayland
+        export XDG_SESSION_TYPE=wayland
+    fi
+
+    ./Discord "$@"
+}
+
+# Check if discord is already running
+if pgrep -x "Discord" > /dev/null; then
+    open_or_focus_discord
+    exit 0
+fi
+
 notify-send "Discord: Fetching local and remote versions..."
 
 LOCAL_VERSION=$(get_local_version)
@@ -46,13 +64,4 @@ if [[ ! -d "$DISCORD_FOLDER" || "$LOCAL_VERSION" != "$LATEST_VERSION" ]]; then
     notify-send "Discord: Discord $LATEST_VERSION has been installed successfully. Opening..."
 fi
 
-# Run Discord
-cd "$DISCORD_FOLDER"
-
-# Wayland hints if applicable
-if [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
-    export OZONE_PLATFORM=wayland
-    export XDG_SESSION_TYPE=wayland
-fi
-
-./Discord "$@"
+open_or_focus_discord
