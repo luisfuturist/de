@@ -1,0 +1,106 @@
+#!/bin/bash
+
+# --- Defaults ---
+APP_CLASS=""
+APP_EXEC_OR_URL=""
+WEBAPP_OPENER="google-chrome-stable --app="
+TERMAPP_OPENER="alacritty -e"
+LAUNCH_MODE="standalone"
+FOCUS_INSTEAD_OF_NEW=false
+
+# --- Help ---
+command_help() {
+    cat <<EOF
+A generic script to launch or focus Hyperland apps.
+
+Usage:
+    $0 [options] "executable"
+
+Options:
+    --mode <mode>                     Launch as 'standalone' (default), 'webapp', or 'termapp'.
+    --class <string>                  Focus filter by window class.
+    --webapp-opener <cmd>             Command to open a web app (default: google-chrome-stable --app=).
+    --termapp-opener <cmd>            Command to open a terminal app (default: alacritty -e).
+    --focus-instead-of-new [boolean]  Prevent launching new instances (default true if flag provided)
+    --help, -h                        Show this help message and exit.
+EOF
+}
+
+# --- Argument Parsing ---
+while [[ "$#" -gt 0 ]]; do
+    case "$1" in
+        --help|-h) command_help; exit 0 ;;
+        --mode) LAUNCH_MODE="$2"; shift ;;
+        --class) APP_CLASS="$2"; shift ;;
+        --webapp-opener) WEBAPP_OPENER="$2"; shift ;;
+        --termapp-opener) TERMAPP_OPENER="$2"; shift ;;
+        --focus-instead-of-new)
+            if [[ -z "$2" || "$2" == -* ]]; then
+                FOCUS_INSTEAD_OF_NEW=true
+            else
+                case "$2" in
+                    true|false) FOCUS_INSTEAD_OF_NEW="$2" ;;
+                    *) echo "Invalid value for --focus-instead-of-new: $2" && exit 1 ;;
+                esac
+                shift
+            fi
+            ;;
+        -*)
+            echo "Error: Unknown option: $1" >&2
+            exit 1
+            ;;
+        *)
+            APP_EXEC_OR_URL="$1"
+            ;;
+    esac
+    shift
+done
+
+# --- Validation ---
+if [[ -z "$APP_EXEC_OR_URL" ]]; then
+    echo "Error: No executable or URL provided." >&2
+    echo "Usage: $0 [options] \"executable\""
+    exit 1
+fi
+
+# --- Functions ---
+launch_app() {
+    case "$LAUNCH_MODE" in
+        webapp)   exec $WEBAPP_OPENER$APP_EXEC_OR_URL ;;
+        termapp)  exec $TERMAPP_OPENER "$APP_EXEC_OR_URL" ;;
+        *)        exec "$APP_EXEC_OR_URL" ;;
+    esac
+}
+
+focus_or_launch() {
+    local found=false
+    local clients="$(hyprctl clients)"
+
+    echo "Focusing..."
+
+    if [[ -n "$APP_CLASS" ]]; then
+        echo "Looking for window with class: $APP_CLASS"
+        if echo "$clients" | awk -v cls="$APP_CLASS" '
+            /^Window / {in_block=1; class=0}
+            in_block && $0 ~ "class: "cls"$" {class=1; exit 0}
+            in_block && /^$/ {in_block=0}
+            END {if (!class) exit 1}
+        '; then
+            echo "Found matching window."
+            hyprctl dispatch focuswindow "class:^$APP_CLASS$"
+            found=true
+        fi
+    fi
+
+    if [[ "$found" = false ]]; then
+        echo "No matching window found. Launching new instance."
+        launch_app
+    fi
+}
+
+# --- Main ---
+if [[ "$FOCUS_INSTEAD_OF_NEW" == false ]]; then
+    launch_app
+else
+    focus_or_launch
+fi

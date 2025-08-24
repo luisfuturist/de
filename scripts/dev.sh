@@ -116,59 +116,12 @@ handle_bin_file_change() {
     fi
 }
 
-handle_aliases_file_change() {
-    local file="$1"
-    local event="$2"
-    log_debug "$file (event: $event) - NOT IMPLEMENTED"
-    # TODO: apply aliases
+handle_home_file_change() {
+    log_info "Not implemented yet"
 }
 
-handle_backgrounds_file_change() {
-    local file="$1"
-    local event="$2"
-    log_debug "$file (event: $event) - NOT IMPLEMENTED"
-    # TODO: apply backgrounds
-}
-
-handle_icons_file_change() {
-    local file="$1"
-    local event="$2"
-    log_debug "$file (event: $event) - NOT IMPLEMENTED"
-    # TODO: apply icons
-}
-
-handle_themes_file_change() {
-    local file="$1"
-    local event="$2"
-    log_debug "$file (event: $event) - NOT IMPLEMENTED"
-    # TODO: apply themes
-}
-
-handle_gitconfig_file_change() {
-    local file="$1"
-    local event="$2"
-
-    log_debug "Gitconfig file changed: $file (event: $event)"
-
-    case "$event" in
-        DELETE|MOVED_FROM)
-            if [[ -f "$DEST_GITCONFIG_FILE" ]]; then
-                rm "$DEST_GITCONFIG_FILE"
-                log_debug "Removed $DEST_GITCONFIG_FILE"
-            fi
-            ;;
-        MODIFY|CREATE|MOVED_TO)
-            if [[ -f "$file" ]]; then
-                cp "$file" "$DEST_GITCONFIG_FILE"
-                log_debug "Updated $DEST_GITCONFIG_FILE"
-            else
-                log_error "Source gitconfig file not found: $file"
-            fi
-            ;;
-        *)
-            log_debug "Unhandled gitconfig event: $event"
-            ;;
-    esac
+handle_non_home_file_change() {
+    log_info "Not implemented yet"
 }
 
 route_file_change() {
@@ -198,6 +151,8 @@ route_file_change() {
 }
 
 check_required_software() {
+    log_info "Checking required software..."
+
     if ! command -v inotifywait &> /dev/null; then
         log_info "inotifywait is not installed. Installing inotify-tools package..."
         sudo pacman -S inotify-tools
@@ -211,12 +166,13 @@ check_required_software() {
 
 check_required_software
 
-echo "Watching for changes in project directories..."
-echo "Press Ctrl+C to stop watching"
+log_info "Watching for changes in project directories..."
+log_info "Press Ctrl+C to stop watching"
 
 # Watch for file changes in all project directories
 inotifywait -m -r -e create,modify,delete,moved_from,moved_to --format '%w%f %e' \
-    "$SRC_CONFIG_DIR" "$SRC_BIN_DIR" "$SRC_GITCONFIG_FILE" "$SRC_ALIASES_DIR" "$SRC_BACKGROUNDS_DIR" "$SRC_ICONS_DIR" "$SRC_THEMES_DIR" |
+    "$SRC_FILES_DIR" |
 while read file event; do
-    route_file_change "$file" "$event"
+    #route_file_change "$file" "$event"
+    echo "File changed: $file (event: $event)"
 done

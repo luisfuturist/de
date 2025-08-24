@@ -8,8 +8,7 @@
 
     // Module order
     "modules-left": [
-        "hyprland/workspaces",
-        "keyboard-state"
+        "hyprland/workspaces"
     ],
     
     "modules-right": [
@@ -80,16 +79,6 @@
             "warning": 30,
             "critical": 10
         }
-    },
-
-    "keyboard-state": {
-      "numlock": true,
-      "capslock": true,
-      "format": "{name} {icon}",
-      "format-icons": {
-        "locked": "a",
-        "unlocked": "b"
-      }
     },
 
     "clock#calendar": {

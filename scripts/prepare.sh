@@ -4,49 +4,45 @@ source "$(dirname "$0")/../lib/errors.sh"
 source "$(dirname "$0")/../lib/log.sh"
 source "$(dirname "$0")/../project.sh"
 
-prepare_config() {
-    log_info "Copying all configuration files..."
+prepare_home_files() {
+    log_info "Preparing home files"
 
-    # Create destination config directory if it doesn't exist
-    mkdir -p "$DEST_CONFIG_DIR"
+    # Recursively copies everything from the directory path formed by concatenating the value of $SRC_FILES_DIR and $HOME into your home directory ($HOME). All files and subdirectories from the source are duplicated into the destination, preserving the directory structure. If files with the same name exist in the destination, they will be overwritten.
+    log_info "Copying all home files from $SRC_FILES_DIR$HOME to $HOME"
+    rsync -av "$SRC_FILES_DIR$HOME"/. "$HOME"/
 
-    # Copy all configuration files from source to destination
-    # This copies directories recursively and overwrites existing files
-    # Existing files in destination not present in source are preserved
-    cp -r "$SRC_CONFIG_DIR"/* "$DEST_CONFIG_DIR"/
-
-    log_success "Configuration files copied successfully!"
+    log_success "Home files copied successfully!"
 }
 
-prepare_bin() {
-    log_info "Installing bin scripts..."
+prepare_non_home_files() {
+    log_info "Copying all non-home files..."
 
-    # Move ./bin/* into /usr/local/bin
-    sudo cp -r ./bin/* /usr/local/bin
+    # Copy all files except $HOME from $SRC_FILES_DIR to /
+    sudo rsync -av --exclude="$HOME" "$SRC_FILES_DIR"/ / 
 
-    # Update permissions
+    log_success "Non-home files copied successfully!"
+}
+
+apply_bin() {
+    log_info "Applying bin..."
+
+    log_info "Updating permissions for binaries..."
     sudo chmod +x /usr/local/bin/*
 
-    # Reload bashrc to apply changes
+    log_info "Reloading bashrc to apply changes..."
     source ~/.bashrc
 
-    log_success "Installed bin scripts!"
+    log_success "Bin applied successfully!"
 }
 
-prepare_aliases() {
+apply_aliases() {
     log_info "Applying aliases..."
 
-    # Create aliases directory if it doesn't exist
-    sudo mkdir -p "$DEST_ALIASES_DIR"
+    log_info "Updating permissions for aliases..."
+    sudo chmod +x "/usr/local/aliases"/*
 
-    # Copy all alias files to the destination directory
-    sudo cp -r "$SRC_ALIASES_DIR"/* "$DEST_ALIASES_DIR"/
-
-    # Update permissions
-    sudo chmod +x "$DEST_ALIASES_DIR"/*
-
-    # Ensure the aliases are sourced only once in ~/.bashrc
-    for alias_file in "$DEST_ALIASES_DIR"/*.sh; do
+    log_info "Ensuring aliases are sourced in ~/.bashrc"
+    for alias_file in "/usr/local/aliases"/*.sh; do
         if [[ -f "$alias_file" ]]; then
             alias_source_line="source $alias_file"
 
@@ -56,65 +52,25 @@ prepare_aliases() {
         fi
     done
 
-    # Reload bashrc to apply changes
+    log_info "Reloading bashrc to apply changes..."
     source ~/.bashrc
 
     log_success "Aliases applied successfully!"
 }
 
-prepare_backgrounds() {
-    log_info "Copying backgrounds..."
+apply_special_files() {
+    log_info "Applying special files..."
+    
+    apply_aliases
+    apply_bin
 
-    # Create backgrounds directory if it doesn't exist
-    sudo mkdir -p "$DEST_BACKGROUNDS_DIR"
-
-    # Copy all background files to the destination directory
-    sudo cp -r "$SRC_BACKGROUNDS_DIR"/* "$DEST_BACKGROUNDS_DIR"/
-
-    log_success "Backgrounds copied successfully!"
-}
-
-prepare_icons() {
-    log_info "Copying icons..."
-
-    # Create icons directory if it doesn't exist
-    sudo mkdir -p "$DEST_ICONS_DIR"
-
-    # Copy all icon files to the destination directory
-    sudo cp -r "$SRC_ICONS_DIR"/* "$DEST_ICONS_DIR"/
-
-    log_success "Icons copied successfully!"
-}
-
-prepare_themes() {
-    log_info "Copying themes..."
-
-    # Create themes directory if it doesn't exist
-    sudo mkdir -p "$DEST_THEMES_DIR"
-
-    # Copy all theme files to the destination directory
-    sudo cp -r "$SRC_THEMES_DIR"/* "$DEST_THEMES_DIR"/
-
-    log_success "Themes copied successfully!"
-}
-
-prepare_git_config() {
-    log_info "Copying Git configuration..."
-
-    # Copy .gitconfig to ~/.gitconfig
-    cp .gitconfig ~/.gitconfig
-
-    log_success "Git configuration copied successfully!"
+    log_success "Special files applied successfully!"
 }
 
 prepare() {
-    prepare_config
-    prepare_bin
-    prepare_aliases
-    prepare_backgrounds
-    prepare_icons
-    prepare_themes
-    prepare_git_config
+    prepare_home_files
+    prepare_non_home_files
+    apply_special_files
 }
 
 prepare

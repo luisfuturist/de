@@ -1,4 +1,4 @@
-# Basic Git Commands
+# Basic Git Commands 2
 alias gs="git status"                  # Show the working tree status
 alias ga="git add"                    # Stage changes
 alias gaa="git add --all"             # Stage all changes

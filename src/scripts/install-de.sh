@@ -86,6 +86,7 @@ install_file_management_software() {
 
     # File tools
     log_info "Installing file tools..."
+    sudo pacman -S rsync --noconfirm # for file synchronization
     sudo pacman -S 7zip --noconfirm # for archive extraction and preview
     sudo pacman -S unzip --noconfirm # for archive extraction (required by Bun)
     sudo pacman -S jq --noconfirm  # for json preview
@@ -217,6 +218,10 @@ install_cursor() {
 install_dev_software() {
     log_info "Installing software for development..."
 
+    log_info "Installing git dependencies..."
+    sudo pacman -S git less --noconfirm
+    log_success "Git dependencies installed"
+
     install_docker
     install_javascript_software
     install_java_software
@@ -280,6 +285,7 @@ install_misc_software() {
     log_info "Installing document tools..."
     sudo pacman -S evince --noconfirm
     xdg-mime default org.gnome.Evince.desktop application/pdf
+    xdg-mime default evince.desktop application/pdf
 
     # Media tools
     log_info "Installing media tools..."
