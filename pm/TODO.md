@@ -2,22 +2,24 @@
 
 - Bundle CLI from src/cli.sh to dist/cli.sh
 
-- Config waybar
-- Fix waybar live reload
+- Config waybar 
+- Fix opener, play and edit on yazi
+- Config yazi
 - Config lock
 - Config idle
 - Config bootloader to remove the timer
 - Config dunst notifications
-- Config opener, play and edit on yazi
 - Config hyprland
 - Config hypridle
 - Config bemenu
-- Config yazi
 - Config cliphist
 - Config ly and add test mode to it
 - Config theme and icons
 - Config nvidia
 - Config strigi
+
+- Fix waybar live reload
+- Remake `dev` script
 
 - Setup archinstall using `minimal` profile
 - Improve docs
