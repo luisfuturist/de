@@ -23,8 +23,10 @@ install_must_have_software() {
     sudo pacman -S xdg-desktop-portal-hyprland --noconfirm
     log_success "XDG Desktop Portal installed"
 
-    # Authentication Agent 
-    # TODO: check if this is working
+    # Authentication Agent
+    log_info "Installing Authentication Agent..."
+    sudo pacman -S hyprpolkitagent --noconfirm
+    log_success "Authentication Agent installed"
 
     # Qt Wayland Support 
     log_info "Installing Qt Wayland Support..."
@@ -320,7 +322,7 @@ install_misc_software() {
     # Media tools
     log_info "Installing media tools..."
     # TODO: check if this is working
-    sudo pacman -S peek --noconfirm
+    #sudo pacman -S peek --noconfirm
 
     log_success "Core applications installed"
 }
