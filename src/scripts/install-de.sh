@@ -262,6 +262,7 @@ install_misc_software() {
     log_info "Installing miscellaneous software..."
     
     sudo pacman -S ffmpeg --noconfirm
+    sudo pacman -S fuse2 --noconfirm
 
     # Managers
     sudo pacman -S wiremix
