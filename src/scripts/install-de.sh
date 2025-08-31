@@ -308,6 +308,7 @@ install_misc_software() {
     # Networking tools
     log_info "Installing networking tools..."
     curl -fsSL https://tailscale.com/install.sh | sh
+    sudo pacman -S net-tools bind-tools nmap --noconfirm
     
     # Hardware control
     sudo pacman -S brightnessctl --noconfirm
@@ -317,9 +318,6 @@ install_misc_software() {
 
     # Screenshot tool
     sudo pacman -S hyprshot --noconfirm
-    
-    # Network tools
-    sudo pacman -S net-tools bind-tools nmap --noconfirm
     
     # Media tools
     log_info "Installing media tools..."

@@ -1,7 +1,11 @@
-utilities:
-  # System
-  - reflector
-  # Must-have
+main:
+  - salmo:utilities
+  - salmo:games
+  - salmo:environments
+  - salmo:ai
+  - salmo:misc
+
+must-have-utilities:
   - dunst
   - pipewire
   - wireplumber
@@ -9,23 +13,15 @@ utilities:
   - hyprpolkitagent
   - qt5-wayland
   - qt6-wayland
-  # Fonts
+
+fonts:
   - ttf-roboto
   - ttf-roboto-mono
   - noto-fonts
   - noto-fonts-emoji
   - nerd-fonts
-  # Statusbar
-  - waybar
-  # Wallbabr
-  - hyprpaper
-  # App launcher
-  - bemenu
-  # Color picker
-  - hyprpicker
-  # Clipboard management
-  - wl-clipboard
-  - cliphist
+
+file-management-tools:
   # File management
   ## File tools
   - rsync # for file synchronization
@@ -42,12 +38,125 @@ utilities:
   ## File managers
   - yazi
   - pcmanfm
-  ## Torrent client
-  - transmission-gtk
+
+utilities:
+  # System
+  - reflector
+  - salmo:must-have-utilities
+  - salmo:fonts
+  - waybar # Statusbar
+  - hyprpaper # Wallpaper
+  - bemenu # App launcher
+  - hyprpicker # Color picker
+  # Clipboard management
+  - wl-clipboard
+  - cliphist
+  - salmo:file-management-tools
+  - transmission-gtk ## Torrent client
+
+ai:
+  - pnpm:strigi
 
 games:
   - prismlauncher
 
+docker:
+  - docker
+  - docker-compose
+  - yay:lazydocker
 
-apps:
+javascript-software:
+  - cmd:
+    - 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash'
+    - 'export NVM_DIR="$HOME_DIR/.nvm"'
+    - '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
+  - cmd:
+    - 'nvm install node'
+  - cmd:
+    - 'curl -fsSL https://bun.sh/install | bash'
+  - cmd:
+    - 'curl -fsSL https://get.pnpm.io/install.sh | sh -'
+
+java-software:
+  - jdk17-openjdk
+  - jdk21-openjdk
+  - gradle
+
+lazyvim:
+  # deps
+  - fish
+  - ast-grep
+  # starter
+  - cmd:
+    - 'git clone https://github.com/LazyVim/starter ~/.config/nvim'
+    - 'rm -rf ~/.config/nvim/.git'
+    - 'nvim --headless +q'
+
+nvim:
+  - neovim
+  - salmo:lazyvim
+
+dev-software:
+  # Git deps
+  - less
+  # Misc
+  - lazygit
+  - github-cli
+  - salmo:docker
+  - salmo:javascript-software
+  - salmo:java-software
+  # IDEs
+  - yay:cursor-bin
+  - salmo:nvim
+
+system-appearance-edition-software:
+  - salmo-priority:low
+  - themix-theme-oomox-git
+  - themix-icons-archdroid-git
+  - themix-full-git
+
+art-creation-software:
+ - inkscape
+ - gimp
+ - kdenlive
+
+environments:
+  - salmo:art-creation-software
+  - salmo:system-appearance-edition-software
+  - salmo:dev-software
+
+misc:
+  - ffmpeg
+  - fuse2
+  # Managers
+  - wiremix
+  - impala
+  - gdu
+  # Web browser
   - yay:google-chrome
+  # Terminal
+  - alacritty
+  - tmux
+  # Document tools
+  - evince
+  # Media tools
+  - vlc
+  - vlc-plugin-ffmpeg
+  - qt6-multimedia-ffmpeg
+  # Image viewer
+  - imv
+  # Network tools
+  - cmd:
+    - 'curl -fsSL https://tailscale.com/install.sh | sh'
+  - net-tools
+  - bind-tools
+  - nmap
+  # Hardware control
+  - brightnessctl
+  # Monitoring tools
+  - htop
+  - btop
+  # Screenshot tool
+  - hyprshot
+  # Media tools
+  # TODO: add media tools
