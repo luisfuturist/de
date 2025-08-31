@@ -2,6 +2,12 @@
 
 - Bundle CLI from src/cli.sh to dist/cli.sh
 
+- Refactor CLI to use a framework like bashly
+
+- Create packages.yml structure
+- Create CLI for updating packages.yml
+
+
 - Config waybar 
 - Fix opener, play and edit on yazi
 - Config yazi
@@ -17,6 +23,8 @@
 - Config theme and icons
 - Config nvidia
 - Config strigi
+
+- Add config for prismlauncher
 
 - Fix waybar live reload
 - Remake `dev` script

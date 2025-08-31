@@ -1,4 +1,4 @@
-source ./lib/log.sh
+source ./salmo/lib/log.sh
 
 # Exit on error, undefined vars, pipe failures
 set -euo pipefail

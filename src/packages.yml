@@ -1,0 +1,53 @@
+utilities:
+  # System
+  - reflector
+  # Must-have
+  - dunst
+  - pipewire
+  - wireplumber
+  - xdg-desktop-portal-hyprland
+  - hyprpolkitagent
+  - qt5-wayland
+  - qt6-wayland
+  # Fonts
+  - ttf-roboto
+  - ttf-roboto-mono
+  - noto-fonts
+  - noto-fonts-emoji
+  - nerd-fonts
+  # Statusbar
+  - waybar
+  # Wallbabr
+  - hyprpaper
+  # App launcher
+  - bemenu
+  # Color picker
+  - hyprpicker
+  # Clipboard management
+  - wl-clipboard
+  - cliphist
+  # File management
+  ## File tools
+  - rsync # for file synchronization
+  - 7zip # for archive extraction and preview
+  - unzip # for archive extraction (required by Bun)
+  - jq # for json preview
+  - poppler # for pdf preview
+  - resvg # for svg preview
+  - imagemagick # for image and font preview
+  - zoxide # for historical directory navigation
+  - fzf # for quick file subtree navigation
+  - fd # for file searching
+  - ripgrep # for file content searching
+  ## File managers
+  - yazi
+  - pcmanfm
+  ## Torrent client
+  - transmission-gtk
+
+games:
+  - prismlauncher
+
+
+apps:
+  - yay:google-chrome

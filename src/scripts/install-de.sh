@@ -293,6 +293,7 @@ install_misc_software() {
     # Media tools
     log_info "Installing media tools..."
     sudo pacman -S vlc --noconfirm
+    sudo pacman -S vlc-plugin-ffmpeg --noconfirm
     sudo pacman -S qt6-multimedia-ffmpeg --noconfirm
     # Image viewer
     sudo pacman -S imv --noconfirm

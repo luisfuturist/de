@@ -1,4 +1,4 @@
-source ./lib/log.sh
+source ./salmo/lib/log.sh
 
 assert_not_root() {
     if [[ $EUID -eq 0 ]]; then

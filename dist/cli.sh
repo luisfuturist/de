@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source "$(dirname "$0")/../lib/errors.sh"
-source "$(dirname "$0")/../lib/log.sh"
-source "$(dirname "$0")/../lib/utils.sh"
+source "$(dirname "$0")/../salmo/lib/errors.sh"
+source "$(dirname "$0")/../salmo/lib/log.sh"
+source "$(dirname "$0")/../salmo/lib/utils.sh"
 source "$(dirname "$0")/../project.sh"
 
 # Constants

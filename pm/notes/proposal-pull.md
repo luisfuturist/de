@@ -12,6 +12,25 @@ The script will copy the files include in the \`.deinclude\` from the destinatio
 
 The script will check for a .deinclude file, which acts as an allowlist for pulling. If this file exists, the script will only conside and pull the files that are explicitly mentioned within it.
 
+Example:
+
+```txt
+/home/luis/.config/alacritty
+/home/luis/.config/Cursor/User/settings.json
+/home/luis/.config/dunst
+/home/luis/.config/hypr
+/home/luis/.config/oomox
+/home/luis/.config/waybar
+/home/luis/.config/yazi
+/home/luis/.icons
+/home/luis/.ssh/config
+/home/luis/.themes
+/home/luis/.gitconfig
+/usr/share/backgrounds
+/usr/local/aliases
+/usr/local/bin
+```
+
 ### **Handling Empty or Missing .deinclude**
 
 If the .deinclude file is missing or empty, the script will immediately stop execution. It will print a clear message informing the user that the file is empty or missing and will suggest generating a new one by running the de freeze command, which would create a .deinclude file based on the full structure of the src/files directory.

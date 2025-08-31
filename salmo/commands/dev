@@ -9,9 +9,9 @@ PROJECT_ROOT=$(cd -- "$SCRIPT_DIR/.." &> /dev/null && pwd)
 # Source all dependencies using the absolute project root path
 # It's good practice to source the main project file first.
 source "$PROJECT_ROOT/project.sh"
-source "$PROJECT_ROOT/lib/errors.sh"
-source "$PROJECT_ROOT/lib/log.sh"
-source "$PROJECT_ROOT/lib/utils.sh"
+source "$PROJECT_ROOT/salmo/lib/errors.sh"
+source "$PROJECT_ROOT/salmo/lib/log.sh"
+source "$PROJECT_ROOT/salmo/lib/utils.sh"
 
 handle_config_file_change() {
     local file="$1" # e.g. /home/luis/GitHub/luisfuturist/de/src/config/hypr/hyprland.conf
