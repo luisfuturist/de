@@ -44,6 +44,7 @@ utilities:
   - reflector
   - salmo:must-have-utilities
   - salmo:fonts
+  - bash-completion
   - waybar # Statusbar
   - hyprpaper # Wallpaper
   - bemenu # App launcher
@@ -104,10 +105,18 @@ dev-software:
   - github-cli
   - salmo:docker
   - salmo:javascript-software
+  - salmo:ruby-software
   - salmo:java-software
+  - yay:argc
   # IDEs
   - yay:cursor-bin
   - salmo:nvim
+
+ruby-software:
+  - ruby
+  - gem:bashly
+  - cmd:
+    - "export PATH=\"$PATH:$(gem env path | sed 's#[^:]\+#&/bin#g')\""
 
 system-appearance-edition-software:
   - salmo-priority:low

@@ -14,7 +14,8 @@
 Before you can start the development mode, you need to prepare the configuration files.
 
 ```bash
-./scripts/prepare.sh
+salmo prepare
+# bash ~/GitHub/9aia/salmo/src/scripts/salmo/salmo prepare
 ```
 
 This will copy the configuration files to the `~/.config/` directory.
@@ -24,7 +25,8 @@ This will copy the configuration files to the `~/.config/` directory.
 To start the development mode, run the following command:
 
 ```bash
-./scripts/dev.sh
+salmo dev
+# bash ~/GitHub/9aia/salmo/src/scripts/salmo/salmo dev
 ```
 
 This will watch for changes in the `config/` directory and apply them to the system.

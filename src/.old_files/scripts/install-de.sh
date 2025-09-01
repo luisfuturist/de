@@ -217,6 +217,15 @@ install_cursor() {
     log_success "Cursor installed"
 }
 
+install_ruby_software() {
+    sudo pacman -S ruby --noconfirm
+
+    # add gem bin dir to path (put this in your initialization script if needed)
+    export PATH="$PATH:$(gem env path | sed 's#[^:]\+#&/bin#g')"
+
+    gem install bashly
+}
+
 install_dev_software() {
     log_info "Installing software for development..."
 
@@ -240,6 +249,8 @@ install_dev_software() {
     log_info "Installing GitHub CLI..."
     sudo pacman -S github-cli --noconfirm
     log_success "GitHub CLI installed"
+
+    install_ruby_software
     
     log_success "Software for development installed"
 }
