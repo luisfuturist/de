@@ -78,7 +78,9 @@
         "states": {
             "warning": 30,
             "critical": 10
-        }
+        },
+        "on-click": "alacritty -e battop",
+        "tooltip-format": "󰏋  Open battery manager"
     },
 
     "clock#calendar": {

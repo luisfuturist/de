@@ -1,6 +1,7 @@
 7zip
 alacritty
 ast-grep
+azure-cli
 base
 base-devel
 bash-completion
