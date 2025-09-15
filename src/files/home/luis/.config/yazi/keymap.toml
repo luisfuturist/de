@@ -1,14 +1,19 @@
 [[mgr.prepend_keymap]]
-on = [ "<C-Enter>" ]
-run  = 'shell "alacritty --working-directory $PWD" --orphan'
-desc = "Open Alacritty in current dir"
-
-[[mgr.prepend_keymap]]
 on = [ "?" ]
 run = 'help'
 desc = "Open help"
 
 [[mgr.prepend_keymap]]
-on = [ "<C-g>" ]
+on = [ "<C-A-Enter>" ]
+run  = 'shell "alacritty --working-directory $PWD" --orphan'
+desc = "Open Alacritty in current dir"
+
+[[mgr.prepend_keymap]]
+on = [ "<C-A-g>" ]
 run = "shell 'alacritty --working-directory $PWD -e lazygit' --orphan"
 desc = "Open lazygit in the current dir"
+
+[[mgr.prepend_keymap]]
+on = [ "<C-A-c>" ]
+run = "shell 'cursor $PWD' --orphan"
+desc = "Open Cursor in the current dir"
