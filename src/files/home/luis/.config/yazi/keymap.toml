@@ -7,3 +7,8 @@ desc = "Open Alacritty in current dir"
 on = [ "?" ]
 run = 'help'
 desc = "Open help"
+
+[[mgr.prepend_keymap]]
+on = [ "<C-g>" ]
+run = "shell 'alacritty --working-directory $PWD -e lazygit' --orphan"
+desc = "Open lazygit in the current dir"
