@@ -1,5 +1,4 @@
 battop
-battop-debug
 cursor-bin
 google-chrome
 slack-desktop

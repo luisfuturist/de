@@ -59,6 +59,7 @@ linux-firmware
 linux-headers
 linux-zen
 linux-zen-headers
+luanti
 ly
 nano
 neovim
@@ -95,6 +96,7 @@ reflector
 resvg
 rsync
 ruby
+scrcpy
 slurp
 smartmontools
 sof-firmware
@@ -102,6 +104,7 @@ tailscale
 tmux
 transmission-cli
 transmission-gtk
+tree
 ttf-0xproto-nerd
 ttf-3270-nerd
 ttf-agave-nerd

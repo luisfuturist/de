@@ -20,6 +20,13 @@ salmo prepare
 
 This will copy the configuration files to the `~/.config/` directory.
 
+## Pulling
+
+```bash
+salmo pulling
+# bash ~/GitHub/9aia/salmo/src/scripts/salmo/salmo pulling
+```
+
 ## Development Mode
 
 To start the development mode, run the following command:
