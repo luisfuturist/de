@@ -1,8 +1,0 @@
-#!/bin/bash
-
-firefox &
-code ~/GitHub/beduality/papermc-plugin/ &
-xfce4-terminal --execute bash -c "cd ~/GitHub/beduality/server/ && bash ./run.sh" &
-prismlauncher -l "1.20.6" --profile LuisFuturist &
-ngrok tcp --domain=tapir-selected-weevil.ngrok-free.app 25565
-exit
