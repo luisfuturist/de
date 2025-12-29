@@ -1,6 +1,2 @@
-FILES_DIR: ./src/files
-PACKAGES_FILE: ./src/packages.yml
-DEFAULT_PACKAGE_MANAGER: pacman
-BUILD:
-  OUT_DIR: ./dist
-  FILENAME: luis-de
+build:
+  filename: luis-de
