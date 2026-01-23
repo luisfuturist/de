@@ -8,6 +8,13 @@ An opinionated, automated desktop environment installer for Arch Linux that deli
 > [!NOTE]
 > This project is meant to be personal and extremely opinionated. It is not meant to be a general purpose desktop environment. If you find this project useful to your own needs, it is recommended to fork it and make it your own adjustments.
 
+## Quick Start
+
+ ```bash
+ # Apply files and install packages
+ ~/GitHub/9aia/salmo/src/scripts/salmo/salmo prepare
+ ```
+
 ## Goals
 
 - 🎯 **Opinionated**: Curated choices, not user-configurable

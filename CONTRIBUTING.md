@@ -22,9 +22,11 @@ This will copy the configuration files to the `~/.config/` directory.
 
 ## Pulling
 
+Pull configuration files and packages from your system:
+
 ```bash
-salmo pulling
-# bash ~/GitHub/9aia/salmo/src/scripts/salmo/salmo pulling
+salmo pull
+# bash ~/GitHub/9aia/salmo/src/scripts/salmo/salmo pull
 ```
 
 ## Development Mode
