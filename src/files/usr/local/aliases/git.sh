@@ -5,7 +5,7 @@ alias gaa="git add --all"             # Stage all changes
 alias gp="git push"                   # Push to remote
 alias gpl="git pull"                  # Pull from remote
 alias gco="git checkout"              # Checkout a branch or commit
-alias gcb="git checkout -b"           # Create and switch to a new branch
+alias gcob="git checkout -b"           # Create and switch to a new branch
 alias gd="git diff"                   # Show changes
 alias gds="git diff --staged"         # Show staged changes
 alias gl="git log"                    # Log
@@ -15,7 +15,7 @@ alias gl1="git log --oneline"          # Compact log view
 
 alias gc="git commit -m"                        # Commit with a message
 alias gcm="git commit --amend"                  # Amend the last commit
-alias gcn="git commit --amend --no-edit"        # Amend the last commit with no-edit
+alias gcmn="git commit --amend --no-edit"        # Amend the last commit with no-edit
 
 # Branch Management
 alias gb="git branch"                 # List branches
@@ -26,12 +26,13 @@ alias gbD="git branch -D"             # Force delete a branch
 # Stash Commands
 alias gst="git stash"                 # Stash changes
 alias gstp="git stash pop"            # Apply the latest stash and remove it
-alias gstl="git stash list"           # Show all stashes
+alias gsta="git stash list"           # Show all stashes
 alias gsta="git stash apply"          # Apply a specific stash
 alias gstd="git stash drop"           # Delete a stash
 
 # Remote Commands
-alias gr="git remote -v"              # List remotes
+alias gr="git remote"
+alias grv="git remote -v"             # List remotes
 alias gra="git remote add"            # Add a remote
 alias gru="git remote update"         # Update remotes
 alias grrm="git remote remove"        # Remove a remote
@@ -47,9 +48,10 @@ alias grba="git rebase --abort"       # Abort rebase
 # Reset and Clean
 alias grs="git reset"                 # Unstage changes
 alias grsh="git reset --hard"         # Reset to HEAD and discard changes
-alias grs1="git reset HEAD~1"         # Undo the last commit (keep changes)
 alias grh="git reset HEAD"            # Unstage files
-alias gcl="git clean -fd"             # Remove untracked files and directories
+alias grs1="git reset HEAD~1"         # Undo the last commit (keep changes)
+alias gcl="git clean"                 # Remove untracked
+alias gclfd="git clean -fd"           # Remove untracked files and directories forcefully
 
 # Tagging
 alias gt="git tag"                    # List tags
@@ -61,7 +63,7 @@ alias gtp="git push origin --tags"    # Push all tags to remote
 # Others
 alias gsh="git show"                  # Show details of a commit or reference
 alias gbl="git blame"                 # Show who changed what in a file
-alias gfg="git grep"                  # Search through code
+alias ggr="git grep"                  # Search through code
 alias gcp="git cherry-pick"           # Apply changes from another commit
 alias gsw="git switch"                # Switch branches
 alias gswc="git switch -c"            # Create and switch to a branch
