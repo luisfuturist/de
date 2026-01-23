@@ -1,6 +1,16 @@
+aws-session-manager-plugin
 battop
+cheese
+clutter
+clutter-gst
+clutter-gtk
+cogl
 cursor-bin
 google-chrome
+gtk2
+libcheese
+playwright
+python-circuitbreaker
 slack-desktop
 themix-export-spotify-git
 themix-full-git
@@ -16,5 +26,5 @@ themix-plugin-base16-git
 themix-theme-oomox-git
 ventoy-bin
 visual-studio-code-bin
-yay-bin
-yay-bin-debug
+yay
+yay-debug
