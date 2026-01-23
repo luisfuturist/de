@@ -21,6 +21,7 @@ alias dvorma='docker volume rm $(docker volume ls -q)' # Remove all volumes
 # Docker Compose shortcuts
 alias dcu='docker compose up'
 alias dcud='docker-compose up -d'
+alias dcub='docker-compose up --build'
 alias dcd='docker-compose down'
 alias dcl='docker-compose logs -f'
 alias dcb='docker-compose build'
