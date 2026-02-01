@@ -9,6 +9,7 @@ alias drma='docker rm $(docker ps -aq)'      # Remove all containers
 alias drmi='docker rmi'
 alias drmia='docker rmi $(docker images -q)' # Remove all images
 alias dd='docker stop'
+alias dda='docker stop $(docker ps -aq)' # Stop all containers
 alias dru='docker run'
 alias druirm='docker run -it --rm'
 alias de='docker exec'
