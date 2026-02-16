@@ -65,7 +65,7 @@
     },
 
     "memory": {
-        "format": "  {avail} GiB",
+        "format": "  {avail}GiB",
         "threshold_degraded": "1G",
         "format_degraded": " MEM < {avail} ",
         "on-click": "alacritty -e htop"
