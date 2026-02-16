@@ -14,6 +14,7 @@
     "modules-right": [
         "cpu",
         "disk#root",
+        "disk#home",
         "memory",
         "network",
         "battery",
@@ -38,9 +39,15 @@
 
     "disk#root": {
         "path": "/",
-        "format": "   {free}",
+        "format": "   / {free}",
         "interval": 30,
         "on-click": "alacritty -e gdu /"
+    },
+    "disk#home": {
+        "path": "/home",
+        "format": "   /home {free}",
+        "interval": 30,
+        "on-click": "alacritty -e gdu /home"
     },
 
     "cpu": {
