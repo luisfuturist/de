@@ -13,9 +13,9 @@
     
     "modules-right": [
         "cpu",
-        "network",
-        "disk",
+        "disk#root",
         "memory",
+        "network",
         "battery",
         "clock#calendar",
         "clock#time",
@@ -36,7 +36,7 @@
         "on-click": "alacritty -e impala"
     },
 
-    "disk": {
+    "disk#root": {
         "path": "/",
         "format": "   {free}",
         "interval": 30,
@@ -58,7 +58,7 @@
     },
 
     "memory": {
-        "format": "  {used} GiB | {avail} GiB",
+        "format": "  {avail} GiB",
         "threshold_degraded": "1G",
         "format_degraded": " MEM < {avail} ",
         "on-click": "alacritty -e htop"
