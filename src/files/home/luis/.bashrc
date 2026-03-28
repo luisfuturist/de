@@ -13,6 +13,7 @@ source /usr/local/aliases/git.sh
 source /usr/local/aliases/terraform.sh
 source /usr/local/aliases/docker.sh
 source /usr/local/aliases/utils.sh
+source /usr/local/aliases/systemctl.sh
 alias opera="opera --private"
 
 export EDITOR='cursor'
@@ -47,10 +48,6 @@ export PATH=/home/luis/.opencode/bin:$PATH
 export PATH=/home/luis/bin:$PATH
 
 [[ -e "/home/luis/lib/oracle-cli/lib/python3.14/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/luis/lib/oracle-cli/lib/python3.14/site-packages/oci_cli/bin/oci_autocomplete.sh"
-
-alias ssd='sudo systemctl start docker'
-alias sdd='sudo systemctl stop docker'
-alias srd='sudo systemctl restart docker'
 
 # Vite+ bin (https://viteplus.dev)
 . "$HOME/.vite-plus/env"
