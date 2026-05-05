@@ -30,7 +30,7 @@ open_or_focus_discord() {
         export XDG_SESSION_TYPE=wayland
     fi
 
-    ./Discord "$@"
+    ./discord "$@"
 }
 
 # Check if discord is already running
@@ -58,7 +58,7 @@ if [[ ! -d "$DISCORD_FOLDER" || "$LOCAL_VERSION" != "$LATEST_VERSION" ]]; then
     notify-send "Discord: Extracting and installing Discord $LATEST_VERSION..."
     mkdir -p "$DISCORD_FOLDER"
     tar -xzf "$DISCORD_ARCHIVE" -C "$DISCORD_FOLDER" --strip-components=1
-    chmod +x "$DISCORD_FOLDER/Discord" || true
+    chmod +x "$DISCORD_FOLDER/discord" || true
 
     rm "$DISCORD_ARCHIVE"
     notify-send "Discord: Discord $LATEST_VERSION has been installed successfully. Opening..."
