@@ -1,1 +1,30 @@
 # TODO — de
+
+- [ ] T-002 Bundle CLI from src/cli.sh to dist/cli.sh
+- [ ] T-003 Refactor CLI to use a framework like bashly
+- [ ] T-004 Create packages.yml structure
+- [ ] T-005 Create CLI for updating packages.yml
+- [ ] T-006 Config waybar
+- [ ] T-007 Fix opener, play and edit on yazi
+- [ ] T-008 Config yazi
+- [ ] T-009 Config lock
+- [ ] T-010 Config idle
+- [ ] T-011 Config bootloader to remove the timer
+- [ ] T-012 Config dunst notifications
+- [ ] T-013 Config hyprland
+- [ ] T-014 Config hypridle
+- [ ] T-015 Config bemenu
+- [ ] T-016 Config cliphist
+- [ ] T-017 Config ly and add test mode to it
+- [ ] T-018 Config theme and icons
+- [ ] T-019 Config nvidia
+- [ ] T-020 Config strigi
+- [ ] T-021 Add config for prismlauncher
+- [ ] T-022 Fix waybar live reload
+- [ ] T-023 Remake dev script
+- [ ] T-024 Setup archinstall using minimal profile
+- [ ] T-025 Improve docs
+- [ ] T-026 Customize notification theme
+- [ ] T-027 Improve battery low notifications
+- [ ] T-028 Use notifications for confirmation: Origin from: power menu, Hyprland actions, etc.
+- [ ] T-029 Customize option menu in desktop: Use a Bemenu alternative for option menu, for dunst actions.
