@@ -1,19 +1,108 @@
 [[mgr.prepend_keymap]]
-on = [ "?" ]
-run = 'help'
-desc = "Open help"
-
-[[mgr.prepend_keymap]]
-on = [ "<C-A-Enter>" ]
+on   = [ "<C-A-t>" ]
 run  = 'shell "alacritty --working-directory $PWD" --orphan'
 desc = "Open Alacritty in current dir"
 
 [[mgr.prepend_keymap]]
-on = [ "<C-A-g>" ]
-run = "shell 'alacritty --working-directory $PWD -e lazygit' --orphan"
+on   = [ "<C-A-g>" ]
+run  = "shell 'alacritty --working-directory $PWD -e lazygit' --orphan"
 desc = "Open lazygit in the current dir"
 
 [[mgr.prepend_keymap]]
-on = [ "<C-A-c>" ]
-run = "shell 'cursor $PWD' --orphan"
-desc = "Open Cursor in the current dir"
+on   = [ "<C-A-d>" ]
+run  = "shell 'alacritty --working-directory $PWD -e devin' --orphan"
+desc = "Open devin-cli in the current dir"
+
+[[mgr.prepend_keymap]]
+on   = [ "<C-A-p>" ]
+run  = 'shell "alacritty --working-directory $PWD -e devin -- \"help me with this file: $(basename $0)\"" --orphan'
+desc = "Send hovered file to devin"
+
+[[mgr.prepend_keymap]]
+on   = [ "<C-A-f>" ]
+run  = "shell 'alacritty --working-directory $PWD -e yazi' --orphan"
+desc = "Open a new yazi instance in current dir"
+
+[[mgr.prepend_keymap]]
+on   = [ "<C-A-u>" ]
+run  = "shell 'alacritty --working-directory $PWD -e myco ui' --orphan"
+desc = "Open myco ui in the current dir"
+
+[[mgr.prepend_keymap]]
+on   = [ "e", "t" ]
+run  = "plugin eza-preview"
+desc = "Toggle tree/list dir preview"
+
+[[mgr.prepend_keymap]]
+on   = [ "e", "-" ]
+run  = "plugin eza-preview inc-level"
+desc = "Increment tree level"
+
+[[mgr.prepend_keymap]]
+on   = [ "e", "_" ]
+run  = "plugin eza-preview dec-level"
+desc = "Decrement tree level"
+
+[[mgr.prepend_keymap]]
+on   = "q"
+run  = "plugin autosession -- save-and-quit"
+desc = "Save session and quit"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "r" ]
+run  = "plugin cd-git-root"
+desc = "Go to git repo root"
+
+# Save session on every directory change (survives WM force-kill like Meta+Q)
+[[mgr.prepend_keymap]]
+on   = "h"
+run  = ["plugin autosession -- save", "leave"]
+desc = "Back to parent dir (with session save)"
+
+[[mgr.prepend_keymap]]
+on   = "l"
+run  = ["plugin autosession -- save", "enter"]
+desc = "Enter child dir (with session save)"
+
+[[mgr.prepend_keymap]]
+on   = "<Left>"
+run  = ["plugin autosession -- save", "leave"]
+desc = "Back to parent dir (with session save)"
+
+[[mgr.prepend_keymap]]
+on   = "<Right>"
+run  = ["plugin autosession -- save", "enter"]
+desc = "Enter child dir (with session save)"
+
+[[mgr.prepend_keymap]]
+on   = "H"
+run  = ["plugin autosession -- save", "back"]
+desc = "Back in history (with session save)"
+
+[[mgr.prepend_keymap]]
+on   = "L"
+run  = ["plugin autosession -- save", "forward"]
+desc = "Forward in history (with session save)"
+
+# search.yazi - fuzzy find with preview & jump-to-line (override builtins)
+[[mgr.prepend_keymap]]
+on   = [ "s" ]
+run  = "plugin search 'fzf_filename'"
+desc = "Find filenames (fuzzy, recursive)"
+
+[[mgr.prepend_keymap]]
+on   = [ "S" ]
+run  = "plugin search 'fzf_content'"
+desc = "Find contents (fuzzy, recursive)"
+
+[[mgr.prepend_keymap]]
+on   = [ "z" ]
+run  = "plugin search 'ripgrep_content'"
+desc = "Find contents (ripgrep, exact)"
+
+# Copy selected file contents to clipboard (inside the `c` copy menu)
+[[mgr.prepend_keymap]]
+on   = [ "c", "C" ]
+run  = "shell 'cat \"$@\" | wl-copy'"
+desc = "Copy selected file contents to clipboard"
+
