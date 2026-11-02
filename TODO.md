@@ -32,3 +32,4 @@
 - [ ] T-031 Export pacman package lists (pacman -Qqe / -Qqm) as NixOS config reference · pri:high · created:2026-11-02
 - [ ] T-034 Backup .ssh .gnupg .config + audit ~/GitHub for uncommitted/unpushed work · pri:high · created:2026-11-02
 - [ ] T-035 Flash NixOS ISO via Ventoy (/opt/ventoy) and install · pri:high · created:2026-11-02
+- [ ] T-036 Backup p3 data (302G): need external drive, or selective backup (homes, configs, uncommitted work — repos are re-clonable) · pri:high · created:2026-11-02
