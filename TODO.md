@@ -30,3 +30,4 @@
 - [ ] T-029 Customize option menu in desktop: Use a Bemenu alternative for option menu, for dunst actions.
 - [ ] T-030 Run pending sudo cleanup: journald vacuum, paccache -rk1, remove orphans + android pkgs + scrcpy, rm 99-platformio-udev.rules, tmpfiles --clean · pri:high · created:2026-11-02
 - [ ] T-031 Export pacman package lists (pacman -Qqe / -Qqm) as NixOS config reference · pri:high · created:2026-11-02
+- [ ] T-032 Install NixOS on p2 (46G) only; keep p3 mounted as /home; recreate luis/luis-nm with same UIDs · pri:high · created:2026-11-02
