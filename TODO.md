@@ -29,7 +29,6 @@
 - [ ] T-028 Use notifications for confirmation: Origin from: power menu, Hyprland actions, etc.
 - [ ] T-029 Customize option menu in desktop: Use a Bemenu alternative for option menu, for dunst actions.
 - [ ] T-030 Run pending sudo cleanup: journald vacuum, paccache -rk1, remove orphans + android pkgs + scrcpy, rm 99-platformio-udev.rules, tmpfiles --clean · pri:high · created:2026-11-02
-- [ ] T-031 Export pacman package lists (pacman -Qqe / -Qqm) as NixOS config reference · pri:high · created:2026-11-02
 - [ ] T-034 Backup .ssh .gnupg .config + audit ~/GitHub for uncommitted/unpushed work · pri:high · created:2026-11-02
 - [ ] T-035 Flash NixOS ISO via Ventoy (/opt/ventoy) and install · pri:high · created:2026-11-02
 - [ ] T-036 Backup p3 data (302G): need external drive, or selective backup (homes, configs, uncommitted work — repos are re-clonable) · pri:high · created:2026-11-02
