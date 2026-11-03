@@ -2,3 +2,4 @@
 
 # myco worktree mount point (created by `myco init`)
 project/
+.old_files/
