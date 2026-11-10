@@ -35,3 +35,4 @@
 - [ ] T-037 Reformat p3 -> btrfs with subvols @nix @home @docker during install; decide LUKS now or never · pri:high · created:2026-11-02
 - [ ] T-038 Install NixOS on p2; mount @home->/home @nix->/nix @docker->/var/lib/docker; recreate luis/luis-nm with same UIDs · pri:high · created:2026-11-02
 - [ ] T-039 Migrate to NixOS · created:2026-11-10
+- [ ] T-040 Organize desktop folder · created:2026-11-10 · blocks:T-039
