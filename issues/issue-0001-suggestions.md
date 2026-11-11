@@ -2,7 +2,7 @@
 id = "I-001"
 title = "Suggestions"
 status = "open"
-priority = "medium"
+priority = "med"
 +++
 
 # Suggestions
